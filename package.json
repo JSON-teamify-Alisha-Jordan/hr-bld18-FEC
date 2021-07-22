@@ -1,0 +1,31 @@
+{
+  "name": "fec",
+  "version": "1.0.0",
+  "description": "Front End Capstone",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSON-teamify-Alisha-Jordan/hr-bld18-FEC.git"
+  },
+  "author": "Jordan Abbasi, Jason Marble, Alisha Edington",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSON-teamify-Alisha-Jordan/hr-bld18-FEC/issues"
+  },
+  "homepage": "https://github.com/JSON-teamify-Alisha-Jordan/hr-bld18-FEC#readme",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "webpack": "^5.45.1"
+  }
+}
