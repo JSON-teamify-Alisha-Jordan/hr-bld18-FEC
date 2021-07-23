@@ -4,6 +4,8 @@
   "description": "Front End Capstone",
   "main": "index.js",
   "scripts": {
+    "react-dev": "webpack --mode development -w",
+    "build": "webpack --mode production -w",
     "test": "jest"
   },
   "repository": {
@@ -17,15 +19,22 @@
   },
   "homepage": "https://github.com/JSON-teamify-Alisha-Jordan/hr-bld18-FEC#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "webpack-cli": "^4.7.2"
   },
   "dependencies": {
     "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "webpack": "^5.45.1"
   }
 }
