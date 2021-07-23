@@ -13,6 +13,8 @@ export default class App extends React.Component {
     return (
       <div>
         <div>Hello World</div>
+        <h3>Nice to see you.</h3>
+        <h2>Did it work?</h2>
       </div>
     );
   }
