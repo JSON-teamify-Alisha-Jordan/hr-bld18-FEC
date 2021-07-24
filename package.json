@@ -6,6 +6,7 @@
   "scripts": {
     "react-dev": "webpack --mode development -w",
     "build": "webpack --mode production -w",
+    "start": "nodemon server/index.js --watch",
     "test": "jest"
   },
   "repository": {
@@ -33,6 +34,9 @@
     "webpack-cli": "^4.7.2"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "webpack": "^5.45.1"
