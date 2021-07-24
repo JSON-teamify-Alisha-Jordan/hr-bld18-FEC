@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
-// const axios = require('axios');
+const axios = require('axios');
 const API_KEY = require('../config');
 
 const port = 3000;
@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 // routes
 
-app.all('*', (req, res, next) => {
+app.all('*', (req, res) => {
   const options = {
     url: `https://app-hrsei-api.herokuapp.com/api/fec2/hr-bld${req.url}`,
     data: req.body,
@@ -23,6 +23,15 @@ app.all('*', (req, res, next) => {
       Authorization: API_KEY,
     },
   };
+
+  axios(options)
+    .then((results) => {
+      res.send(results.data);
+    })
+    .catch((err) => {
+      // res.status(err.response.status);
+      res.send(err);
+    });
 });
 
 app.listen(port, () => {
