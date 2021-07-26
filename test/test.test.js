@@ -1,4 +1,4 @@
 /* eslint-disable no-undef */
 test('Should always pass', () => {
-  expect(true).toBe(false);
+  expect(true).toBe(true);
 });
