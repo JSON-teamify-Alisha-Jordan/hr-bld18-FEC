@@ -1,24 +1,35 @@
-import React from 'react';
+/* eslint-disable import/extensions */
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+import ProductContext from './context';
+import Overview from './components/Overview/Overview.jsx';
 
-export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      stuff: [],
-    };
+export default function App() {
+  /* For products may want to just grab a list of IDs, to store in state,
+  other GET requests return the same info and additional necessary info  */
+  const [products, setProducts] = useState([]);
+
+  function fetchProducts() {
+    axios.get('/products').then((result) => result.data).then(setProducts);
   }
 
-  render() {
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  if (products.length === 0) {
     return (
-      <div>
-        <div>Hello World</div>
-        <h3>Nice to see you.</h3>
-        <h2>Did it work?</h2>
-
-      </div>
+      <div>Loading...</div>
     );
   }
+  return (
+    <ProductContext.Provider value={{
+      products,
+    }}
+    >
+      <Overview products={products} />
+    </ProductContext.Provider>
+  );
 }
 
 ReactDOM.render(
