@@ -11,7 +11,7 @@ export default function FeaturesContainer() {
       </span>
       <ul>
         {currentProduct.features.map((feature) => (
-          <li>
+          <li key={feature.feature}>
             {feature.feature}: {feature.value}
           </li>
         ))}

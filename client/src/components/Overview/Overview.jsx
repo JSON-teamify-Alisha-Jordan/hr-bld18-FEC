@@ -7,30 +7,9 @@ import ProductDetails from './ProductDetails.jsx';
 import FeaturesContainer from './FeaturesContainer.jsx';
 
 export default function Overview() {
-  const { products } = useContext(ProductContext);
-  const [currentProduct, setCurrentProduct] = useState({});
-  const [styles, setStyles] = useState([]);
+  const productID = useContext(ProductContext);
 
-  function fetchStyles() {
-    axios.get(`/products/${products[0].id}/styles`).then((result) => result.data.results).then(setStyles);
-  }
-
-  function fetchCurrentProduct() {
-    axios
-      .get(`/products/${products[0].id}`)
-      .then((result) => result.data)
-      .then(setCurrentProduct);
-  }
-
-  useEffect(() => {
-    fetchCurrentProduct();
-  }, []);
-
-  useEffect(() => {
-    fetchStyles();
-  }, []);
-
-  if (styles.length === 0) {
+  if (styles.length === 0 || Object.keys(currentProduct).length === 0) {
     return (
       <div>Loading...</div>
     );
@@ -41,14 +20,9 @@ export default function Overview() {
       styles,
     }}
     >
-      <ImageGallery
-        styles={styles}
-      />
-      <ProductDetails
-        currentProduct={currentProduct}
-        styles={styles}
-      />
-      <FeaturesContainer currentProduct={currentProduct} />
+      <ImageGallery />
+      <ProductDetails />
+      <FeaturesContainer />
     </ProductContext.Provider>
   );
 }

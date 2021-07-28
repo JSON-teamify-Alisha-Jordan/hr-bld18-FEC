@@ -6,28 +6,83 @@ import ProductContext from './context';
 import Overview from './components/Overview/Overview.jsx';
 
 export default function App() {
-  /* For products may want to just grab a list of IDs, to store in state,
-  other GET requests return the same info and additional necessary info  */
-  const [products, setProducts] = useState([]);
+  const [productID, setProductID] = useState('');
+  const [product, setProduct] = useState({});
+  const [styles, setStyles] = useState([]);
+  const [reviews, setReviews] = useState(null);
+  const [reviewsMeta, setReviewsMeta] = useState({});
+  const [questions, setQuestions] = useState([]);
 
-  function fetchProducts() {
-    axios.get('/products').then((result) => result.data).then(setProducts);
+  function fetchProductID() {
+    axios.get('/products')
+      .then((result) => result.data)
+      .then((products) => products[0].id)
+      .then(setProductID);
+  }
+
+  function fetchProduct() {
+    axios.get(`/products/${productID}`)
+      .then((result) => result.data)
+      .then(setProduct);
+  }
+
+  function fetchStyles() {
+    axios.get(`/products/${productID}/styles`)
+      .then((result) => result.data.results)
+      .then(setStyles);
+  }
+
+  function fetchReviews(count = 2) {
+    axios.get('/reviews/meta', { params: { product_id: productID } })
+      .then((result) => result.data)
+      .then((data) => {
+        setReviewsMeta(data);
+      });
+    axios.get('/reviews', { params: { product_id: productID, sort: 'relevant', count } })
+      .then((result) => result.data.results)
+      .then(setReviews);
+  }
+
+  function fetchQuestions(count = 2) {
+    axios.get('/qa/questions', { params: { product_id: productID, count } })
+      .then((result) => result.data.results)
+      .then(setQuestions);
   }
 
   useEffect(() => {
-    fetchProducts();
+    fetchProductID();
   }, []);
-  if (products.length === 0) {
+
+  useEffect(() => {
+    if (productID) {
+      fetchProduct();
+      fetchStyles();
+      fetchReviews();
+      fetchQuestions();
+    }
+  }, [productID]);
+
+  if (!productID || !styles.length || !reviews || !Object.keys(product).length
+      || !questions.length) {
     return (
       <div>Loading...</div>
     );
   }
   return (
     <ProductContext.Provider value={{
-      products,
+      fetchReviews,
+      fetchStyles,
+      fetchQuestions,
+
+      reviews,
+      questions,
+      reviewsMeta,
+      productID,
+      product,
+      styles,
     }}
     >
-      <Overview products={products} />
+      {/* <Overview /> */}
     </ProductContext.Provider>
   );
 }
