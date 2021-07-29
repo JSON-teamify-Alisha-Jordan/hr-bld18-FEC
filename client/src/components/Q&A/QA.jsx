@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 import SearchBar from './SearchBar.jsx';
-import QuestionRow from './QuestionRow.jsx';
+import QuestionContainer from './QuestionContainer.jsx';
 import AddQuestion from './AddQuestion.jsx';
 
 export default function QA() {
@@ -9,7 +9,7 @@ export default function QA() {
     <div style={{ border: '2px solid slateblue' }}>
       <h2>Questions & Answers</h2>
       <SearchBar />
-      <QuestionRow />
+      <QuestionContainer />
       <AddQuestion />
     </div>
   );

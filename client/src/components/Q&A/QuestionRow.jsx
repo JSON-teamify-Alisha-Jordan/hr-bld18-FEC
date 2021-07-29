@@ -11,10 +11,8 @@ export default function QuestionRow() {
   const renderedQuestions = questions.slice(0, count);
   return (
     <div style={{ border: '2px solid slateblue' }}>
-      {renderedQuestions.map((question) => <span>Q: {question.question_body}</span>)}
-      {console.log(renderedQuestions)}
       <Helpful />
-      <AnswerRow />
+      {renderedQuestions.map((question) => <div>Q: {question.question_body} <AnswerRow /> </div>)}
     </div>
   );
 }
