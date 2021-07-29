@@ -4,7 +4,7 @@ import ProductContext from '../../context';
 export default function FeaturesContainer() {
   const { product } = useContext(ProductContext);
   return (
-    <div>
+    <div className="feature-container">
       <span>
         <h3>{product.slogan}</h3>
         <p>{product.description}</p>

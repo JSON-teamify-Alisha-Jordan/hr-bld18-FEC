@@ -6,10 +6,10 @@ import FeaturesContainer from './FeaturesContainer.jsx';
 
 export default function Overview() {
   return (
-    <>
+    <div className="overview-container">
       <ImageGallery />
       <InfoContainer />
       <FeaturesContainer />
-    </>
+    </div>
   );
 }
