@@ -1,11 +1,17 @@
 /* eslint-disable import/extensions */
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ProductContext from './context';
 import Overview from './components/Overview/Overview.jsx';
 
 export default function App() {
+  /*
+  here we create state for our different catergories of data
+  the first value in the arrays is the name of the state
+  second value in the arrrays is the function which modifies that state
+  useState's argument initializes that state to that type
+  */
   const [productID, setProductID] = useState('');
   const [product, setProduct] = useState({});
   const [styles, setStyles] = useState([]);
@@ -13,6 +19,10 @@ export default function App() {
   const [reviewsMeta, setReviewsMeta] = useState({});
   const [questions, setQuestions] = useState([]);
 
+  /*
+  here we perform requests to endpoints using axios
+  these are asychronous actions and require proper handling
+  */
   function fetchProductID() {
     axios.get('/products')
       .then((result) => result.data)
@@ -32,6 +42,7 @@ export default function App() {
       .then(setStyles);
   }
 
+  // count is helping to control the amount of reviews recieved
   function fetchReviews(count = 2) {
     axios.get('/reviews/meta', { params: { product_id: productID } })
       .then((result) => result.data)
@@ -43,12 +54,13 @@ export default function App() {
       .then(setReviews);
   }
 
-  function fetchQuestions(count = 2) {
-    axios.get('/qa/questions', { params: { product_id: productID, count } })
+  function fetchQuestions() {
+    axios.get('/qa/questions', { params: { product_id: productID } })
       .then((result) => result.data.results)
       .then(setQuestions);
   }
 
+  // defines the product ID
   useEffect(() => {
     fetchProductID();
   }, []);
@@ -62,6 +74,7 @@ export default function App() {
     }
   }, [productID]);
 
+  // if our states are not populated
   if (!productID || !styles.length || !reviews || !Object.keys(product).length
       || !questions.length) {
     return (
@@ -82,11 +95,7 @@ export default function App() {
       styles,
     }}
     >
-      {/* <Overview /> */}
+      <Overview />
     </ProductContext.Provider>
   );
 }
-
-ReactDOM.render(
-  <App />, document.getElementById('app'),
-);
