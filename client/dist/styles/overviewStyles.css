@@ -1,0 +1,38 @@
+body {
+  width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.overview-container {
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  height: 95vh;
+}
+
+.image-gallery-container {
+  grid-row: 1 / span 7;
+  grid-column: 1 / span 6;
+  padding: 1em;
+}
+
+.feature-container {
+  grid-row: 8 / span 3;
+  grid-column: 1 / span 10;
+  padding: 1em;
+}
+
+.info-container {
+  grid-row: 1 / span 7;
+  grid-column: 7 / span 4;
+  padding: 1em;
+}
+
+.style-select-thumb {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  margin: 2px
+}

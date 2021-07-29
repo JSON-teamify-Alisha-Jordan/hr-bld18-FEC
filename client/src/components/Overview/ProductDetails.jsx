@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import ProductContext from '../../context';
 
 export default function ProductDetails() {
-  const { currentProduct, styles } = useContext(ProductContext);
-  // const { photos } = styles[0];
+  const { product } = useContext(ProductContext);
   return (
-    <div>
-      {/* <StyleSelection /> */}
-    </div>
+    <>
+      <div>{product.category}</div>
+      <div>{product.name}</div>
+    </>
   );
 }
