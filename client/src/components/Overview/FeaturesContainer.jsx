@@ -2,15 +2,15 @@ import React, { useContext } from 'react';
 import ProductContext from '../../context';
 
 export default function FeaturesContainer() {
-  const { currentProduct } = useContext(ProductContext);
+  const { product } = useContext(ProductContext);
   return (
-    <div>
+    <div className="feature-container">
       <span>
-        <h3>{currentProduct.slogan}</h3>
-        <p>{currentProduct.description}</p>
+        <h3>{product.slogan}</h3>
+        <p>{product.description}</p>
       </span>
       <ul>
-        {currentProduct.features.map((feature) => (
+        {product.features.map((feature) => (
           <li key={feature.feature}>
             {feature.feature}: {feature.value}
           </li>

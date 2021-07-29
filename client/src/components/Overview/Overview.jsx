@@ -1,28 +1,15 @@
 /* eslint-disable import/extensions */
-import React, { useState, useContext, useEffect } from 'react';
-import axios from 'axios';
-import ProductContext from '../../context';
+import React from 'react';
 import ImageGallery from './ImageGallery.jsx';
-import ProductDetails from './ProductDetails.jsx';
+import InfoContainer from './InfoContainer.jsx';
 import FeaturesContainer from './FeaturesContainer.jsx';
 
 export default function Overview() {
-  const productID = useContext(ProductContext);
-
-  if (styles.length === 0 || Object.keys(currentProduct).length === 0) {
-    return (
-      <div>Loading...</div>
-    );
-  }
   return (
-    <ProductContext.Provider value={{
-      currentProduct,
-      styles,
-    }}
-    >
+    <div className="overview-container">
       <ImageGallery />
-      <ProductDetails />
+      <InfoContainer />
       <FeaturesContainer />
-    </ProductContext.Provider>
+    </div>
   );
 }
