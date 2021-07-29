@@ -43,8 +43,8 @@ export default function App() {
       .then(setReviews);
   }
 
-  function fetchQuestions(count = 2) {
-    axios.get('/qa/questions', { params: { product_id: productID, count } })
+  function fetchQuestions() {
+    axios.get('/qa/questions', { params: { product_id: productID } })
       .then((result) => result.data.results)
       .then(setQuestions);
   }
@@ -82,7 +82,7 @@ export default function App() {
       styles,
     }}
     >
-      {/* <Overview /> */}
+      <Overview />
     </ProductContext.Provider>
   );
 }

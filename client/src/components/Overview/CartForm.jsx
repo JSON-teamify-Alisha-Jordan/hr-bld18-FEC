@@ -5,8 +5,7 @@ export default function ProductDetails() {
   const { product } = useContext(ProductContext);
   return (
     <>
-      <div>{product.category}</div>
-      <div>{product.name}</div>
+      <div>Hi! from cart!</div>
     </>
   );
 }
