@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import SearchBar from './SearchBar.jsx';
 import QuestionRow from './QuestionRow.jsx';
