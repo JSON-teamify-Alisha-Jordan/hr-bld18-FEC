@@ -56,7 +56,7 @@ export default function App() {
   }
 
   function fetchQuestions() {
-    axios.get('/qa/questions', { params: { product_id: productID } })
+    axios.get('/qa/questions', { params: { product_id: productID, page: 1, count: 50 } })
       .then((result) => result.data.results)
       .then(setQuestions);
   }

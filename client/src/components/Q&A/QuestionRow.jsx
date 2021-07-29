@@ -7,11 +7,12 @@ import Helpful from './Helpful.jsx';
 export default function QuestionRow() {
   const { questions } = useContext(ProductContext);
 
+  let count = 2;
+  const renderedQuestions = questions.slice(0, count);
   return (
     <div style={{ border: '2px solid slateblue' }}>
-      Q:
-      {/* this will be dynamically rendered based on which style is selected */}
-      {questions[1].question_body}
+      {renderedQuestions.map((question) => <span>Q: {question.question_body}</span>)}
+      {console.log(renderedQuestions)}
       <Helpful />
       <AnswerRow />
     </div>
