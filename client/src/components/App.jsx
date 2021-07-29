@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 // import ReactDOM from 'react-dom';
 import axios from 'axios';
-import ProductContext from './context';
-import Overview from './components/Overview/Overview.jsx';
+import ProductContext from '../context';
+import Overview from './Overview/Overview.jsx';
 
 export default function App() {
   /*
