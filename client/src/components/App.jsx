@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductContext from '../context';
 import Overview from './Overview/Overview.jsx';
+import QA from './Q&A/QA.jsx';
 
 export default function App() {
   /*
@@ -96,6 +97,7 @@ export default function App() {
     }}
     >
       <Overview />
+      <QA />
     </ProductContext.Provider>
   );
 }
