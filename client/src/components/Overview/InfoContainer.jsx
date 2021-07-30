@@ -8,7 +8,7 @@ import ProductDetails from './ProductDetails.jsx';
 import StyleSelection from './StyleSelection.jsx';
 import findAverageRating from '../../helperFunctions.js';
 
-export default function InfoContainer() {
+export default function InfoContainer({ currentStyle, changeSelectedStyle }) {
   const { reviewsMeta } = useContext(ProductContext);
   const rating = findAverageRating(reviewsMeta.ratings);
 
@@ -16,7 +16,7 @@ export default function InfoContainer() {
     <div className="info-container">
       <Stars rating={rating} />
       <ProductDetails />
-      <StyleSelection />
+      <StyleSelection currentStyle={currentStyle} changeSelectedStyle={changeSelectedStyle} />
     </div>
   );
 }
