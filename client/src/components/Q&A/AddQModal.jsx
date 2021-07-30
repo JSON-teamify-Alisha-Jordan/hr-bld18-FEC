@@ -9,6 +9,8 @@ export default function AddQModal({ show, setShow }) {
         border: '2px solid slateblue',
         opacity: show ? '1' : '0',
         transform: show ? 'translateY(0vh)' : 'translateY(-100vh)',
+        zIndex: show ? '1' : '-1',
+        position: 'relative',
       }}
     >
       <div className="modal-header">
