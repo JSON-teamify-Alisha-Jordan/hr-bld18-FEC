@@ -1,9 +1,9 @@
 .star {
   display: inline-block;
   position: relative;
-  font-size: 20px;
+  font-size: 1.1em;
   color: white;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.076em;
   -webkit-text-stroke-color: rgb(186, 186, 186);
 }
 
@@ -14,7 +14,7 @@
   top: 0;
   width: 25%;
   overflow: hidden;
-  color: rgb(255, 248, 30);
+  color: rgb(254, 217, 30);
 }
 
 .star50::after {
@@ -24,7 +24,7 @@
   top: 0;
   width: 50%;
   overflow: hidden;
-  color: rgb(255, 248, 30);
+  color: rgb(254, 217, 30);
 }
 
 .star75::after {
@@ -34,7 +34,7 @@
   top: 0;
   width: 75%;
   overflow: hidden;
-  color: rgb(255, 248, 30);
+  color: rgb(254, 217, 30);
 }
 
 .star100::after {
@@ -44,6 +44,6 @@
   top: 0;
   width: 100%;
   overflow: hidden;
-  color: rgb(255, 248, 30);
+  color: rgb(254, 217, 30);
 }
 

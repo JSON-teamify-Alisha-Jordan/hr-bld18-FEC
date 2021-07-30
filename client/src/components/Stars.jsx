@@ -11,8 +11,9 @@ export default function Stars({ rating }) {
   starFillArray[starFillArray.indexOf(0)] = decimalNum;
 
   return (
-    <div>
-      {starFillArray.map((value) => (<i className={`star star${value} fas fa-star`} />))}
-    </div>
+    <>
+      {starFillArray.map((value) => (
+        <i key={Math.random()} className={`star star${value} fas fa-star`} />))}
+    </>
   );
 }

@@ -11,15 +11,23 @@ export default function StyleSelection({ currentStyle, changeSelectedStyle }) {
   // Probably need a local state to keep track of the one that is selected.
   // Create an onclick handler that takes in the event's value, locates the correct style
   // from the style list, and passes the object back up the chain. Hopefully...
-  function handleStyleSelection() {
-    // do stuff to pull the event value and grab the corresponding style object.
-    // changeSelectedStyle()
+  function handleStyleSelection(event) {
+    event.persist();
+    let newSelection;
+    const selectionId = event.target.attributes[0].value;
+    for (let i = 0; i < styles.length; i++) {
+      if (+(styles[i].style_id) === +(selectionId)) {
+        newSelection = styles[i];
+      }
+    }
+    changeSelectedStyle(newSelection);
   }
   return (
     <>
       <div>
         {styles.map((style) => (
           <img
+            key={style.style_id}
             value={style.style_id}
             className="style-select-thumb"
             src={style.photos[0].thumbnail_url}
