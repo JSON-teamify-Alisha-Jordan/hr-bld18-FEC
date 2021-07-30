@@ -3,10 +3,16 @@ import React from 'react';
 
 export default function SearchBar() {
   return (
-    <div style={{ border: '2px solid slateblue' }}>
+    <div
+      className="searchBar"
+      style={{ border: '2px solid slateblue' }}
+    >
       Hello from Search Bar
       <form>
-        <input placeholder="This is the place(holder)" />
+        <input
+          className="searchInput"
+          placeholder="Have a question? Search for answers…"
+        />
       </form>
     </div>
   );

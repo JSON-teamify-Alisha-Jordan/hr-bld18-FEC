@@ -4,7 +4,10 @@ import QuestionRow from './QuestionRow.jsx';
 
 export default function QuestionContainer() {
   return (
-    <div style={{ border: '2px solid slateblue' }}>
+    <div
+      className="questionsContainer"
+      style={{ border: '2px solid slateblue' }}
+    >
       Hello from Container
       <QuestionRow />
     </div>

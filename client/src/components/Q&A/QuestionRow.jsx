@@ -10,7 +10,10 @@ export default function QuestionRow() {
   let count = 2;
   const renderedQuestions = questions.slice(0, count);
   return (
-    <div style={{ border: '2px solid slateblue' }}>
+    <div
+      className="questionsRow"
+      style={{ border: '2px solid slateblue' }}
+    >
       <Helpful />
       {renderedQuestions.map((question) => <div>Q: {question.question_body} <AnswerRow /> </div>)}
     </div>

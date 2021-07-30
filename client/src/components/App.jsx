@@ -1,29 +1,19 @@
 /* eslint-disable import/extensions */
 import React, { useState, useEffect } from 'react';
-// import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ProductContext from '../context';
 import Overview from './Overview/Overview.jsx';
 import QA from './Q&A/QA.jsx';
 
 export default function App() {
-  /*
-  here we create state for our different catergories of data
-  the first value in the arrays is the name of the state
-  second value in the arrrays is the function which modifies that state
-  useState's argument initializes that state to that type
-  */
   const [productID, setProductID] = useState('');
   const [product, setProduct] = useState({});
   const [styles, setStyles] = useState([]);
   const [reviews, setReviews] = useState(null);
   const [reviewsMeta, setReviewsMeta] = useState(null);
   const [questions, setQuestions] = useState([]);
+  const [show, setShow] = useState(false);
 
-  /*
-  here we perform requests to endpoints using axios
-  these are asychronous actions and require proper handling
-  */
   function fetchProductID() {
     axios.get('/products')
       .then((result) => result.data)
@@ -43,7 +33,6 @@ export default function App() {
       .then(setStyles);
   }
 
-  // count is helping to control the amount of reviews recieved
   function fetchReviews(count = 2) {
     axios.get('/reviews/meta', { params: { product_id: productID } })
       .then((result) => result.data)
@@ -61,7 +50,6 @@ export default function App() {
       .then(setQuestions);
   }
 
-  // defines the product ID
   useEffect(() => {
     fetchProductID();
   }, []);
@@ -77,27 +65,30 @@ export default function App() {
 
   // if our states are not populated
   if (!productID || !styles.length || !reviews || !Object.keys(product).length
-      || !questions.length || !reviewsMeta) {
+    || !questions.length || !reviewsMeta) {
     return (
       <div>Loading...</div>
     );
   }
   return (
-    <ProductContext.Provider value={{
-      fetchReviews,
-      fetchStyles,
-      fetchQuestions,
+    <div>
+      {show ? <div className="modal-backdrop" onClick={() => setShow(false)} /> : null}
+      <ProductContext.Provider value={{
+        fetchReviews,
+        fetchStyles,
+        fetchQuestions,
 
-      reviews,
-      questions,
-      reviewsMeta,
-      productID,
-      product,
-      styles,
-    }}
-    >
-      <Overview />
-      <QA />
-    </ProductContext.Provider>
+        reviews,
+        questions,
+        reviewsMeta,
+        productID,
+        product,
+        styles,
+      }}
+      >
+        <Overview />
+        <QA show={show} setShow={setShow} />
+      </ProductContext.Provider>
+    </div>
   );
 }
