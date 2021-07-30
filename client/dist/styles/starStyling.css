@@ -1,0 +1,49 @@
+.star {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(186, 186, 186);
+}
+
+.star25::after {
+  content: "\f005";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  overflow: hidden;
+  color: rgb(255, 248, 30);
+}
+
+.star50::after {
+  content: "\f005";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  overflow: hidden;
+  color: rgb(255, 248, 30);
+}
+
+.star75::after {
+  content: "\f005";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75%;
+  overflow: hidden;
+  color: rgb(255, 248, 30);
+}
+
+.star100::after {
+  content: "\f005";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: rgb(255, 248, 30);
+}
+
