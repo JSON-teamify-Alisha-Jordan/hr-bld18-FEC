@@ -71,7 +71,7 @@ export default function App() {
     );
   }
   return (
-    <div>
+    <>
       {show ? <div className="modal-backdrop" onClick={() => setShow(false)} /> : null}
       <ProductContext.Provider value={{
         fetchReviews,
@@ -89,6 +89,6 @@ export default function App() {
         <Overview />
         <QA show={show} setShow={setShow} />
       </ProductContext.Provider>
-    </div>
+    </>
   );
 }
