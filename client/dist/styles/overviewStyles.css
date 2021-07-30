@@ -31,8 +31,13 @@ body {
 .style-select-thumb {
   object-fit: cover;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  border: 2px solid black;
-  margin: 2px
+  height: 6em;
+  width: 6em;
+  margin: 0.20em;
+  cursor: pointer;
+}
+
+.reviews-link {
+  margin-left: 0.40em;
+  font-size: 1.1em;
 }

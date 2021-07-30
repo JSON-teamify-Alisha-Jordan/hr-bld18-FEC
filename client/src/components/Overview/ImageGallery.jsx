@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
 
-export default function ImageGallery() {
-  // const { styles } = useContext(ProductContext);
-  // need the currently selected style from the style selector component.
-  // let defaultStyle;
+export default function ImageGallery({ currentStyle }) {
+  const { styles } = useContext(ProductContext);
 
   return (
     <div className="image-gallery-container">
