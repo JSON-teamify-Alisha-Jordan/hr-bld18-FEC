@@ -17,7 +17,7 @@ export default function App() {
   const [product, setProduct] = useState({});
   const [styles, setStyles] = useState([]);
   const [reviews, setReviews] = useState(null);
-  const [reviewsMeta, setReviewsMeta] = useState({});
+  const [reviewsMeta, setReviewsMeta] = useState(null);
   const [questions, setQuestions] = useState([]);
 
   /*
@@ -77,7 +77,7 @@ export default function App() {
 
   // if our states are not populated
   if (!productID || !styles.length || !reviews || !Object.keys(product).length
-      || !questions.length) {
+      || !questions.length || !reviewsMeta) {
     return (
       <div>Loading...</div>
     );
