@@ -1,0 +1,24 @@
+.mainContainer,
+.searchBar,
+.questionContainer,
+.helpful,
+.questionRow,
+.answersRow,
+.addQuestion {
+  margin: 8px;
+}
+
+.searchInput {
+  height: 35px;
+  width: 55vw;
+}
+
+.open-modal-btn {
+  background: rgb(97, 97, 97);
+  color: rgb(143, 251, 255);
+  font-size: 1.25em;
+  margin: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
