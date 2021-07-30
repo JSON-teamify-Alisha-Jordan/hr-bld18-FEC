@@ -19,23 +19,23 @@ body {
 .modal-header {
   background: darkslategray;
   color: aquamarine;
-  padding: 1rem;
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .modal-header span {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   cursor: pointer;
 }
 
 .modal-content {
-  padding: 1.5rem 1rem;
+  padding: 1.5em 1em;
 }
 
 .modal-body {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 .modal-body h4 {
@@ -43,18 +43,18 @@ body {
 }
 
 .modal-body p {
-  font-size: 1rem;
+  font-size: 1em;
   background: white;
   color: cadetblue;
-  padding: 1rem;
-  margin: 1rem 0 2rem 0;
+  padding: 1em;
+  margin: 1em 0 2em 0;
 }
 
 .modal-footer button {
   display: block;
-  font-size: 1rem;
+  font-size: 1em;
   margin-left: auto;
-  padding: 0.5rem 1.8rem;
+  padding: 0.5em 1.8em;
   background: coral;
   color: white;
   border: none;
