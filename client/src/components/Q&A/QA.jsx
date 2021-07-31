@@ -1,11 +1,13 @@
 /* eslint-disable import/extensions */
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from './SearchBar.jsx';
 import QuestionContainer from './QuestionContainer.jsx';
 import AddQuestion from './AddQuestion.jsx';
 import AddQModal from './AddQModal.jsx';
 
 export default function QA({ show, setShow }) {
+  const [searchTerm, setSearchTerm] = useState('');
+  console.log(searchTerm);
   return (
     <div
       className="mainContainer"
@@ -13,8 +15,8 @@ export default function QA({ show, setShow }) {
     >
       <h2>Questions & Answers</h2>
       <AddQModal show={show} setShow={setShow} />
-      <SearchBar />
-      <QuestionContainer />
+      <SearchBar setSearchTerm={setSearchTerm} />
+      <QuestionContainer searchTerm={searchTerm} />
       <AddQuestion setShow={setShow} />
     </div>
   );

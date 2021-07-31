@@ -15,7 +15,13 @@ export default function QuestionRow() {
       style={{ border: '2px solid slateblue' }}
     >
       <Helpful />
-      {renderedQuestions.map((question) => <div>Q: {question.question_body} <AnswerRow /> </div>)}
+      {renderedQuestions.map((question) => (
+        <div key={question.question_id}>
+          Q:
+          {question.question_body}
+          <AnswerRow questionId={question.question_id} />
+        </div>
+      ))}
     </div>
   );
 }

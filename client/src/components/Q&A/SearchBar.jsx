@@ -1,7 +1,14 @@
 /* eslint-disable import/extensions */
 import React from 'react';
 
-export default function SearchBar() {
+export default function SearchBar({ setSearchTerm }) {
+  function handleSearch(event) {
+    const search = event.nativeEvent.target.value;
+    if (search.length >= 3) {
+      setSearchTerm(search);
+    }
+  }
+
   return (
     <div
       className="searchBar"
@@ -12,6 +19,7 @@ export default function SearchBar() {
         <input
           className="searchInput"
           placeholder="Have a question? Search for answers…"
+          onChange={handleSearch}
         />
       </form>
     </div>
