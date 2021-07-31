@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function CartForm({ currentStyle }) {
   const [selectedSku, setSelectedSku] = useState('default');
-  const [quantity, setQuantity] = useState([]);
+  const [quantities, setQuantities] = useState([]);
 
   const skuIds = Object.keys(currentStyle.skus);
 
@@ -10,12 +10,11 @@ export default function CartForm({ currentStyle }) {
     const eventSku = event.target.value;
     setSelectedSku(eventSku);
     const quantityArray = [];
-    for (let i = 1; i <= currentStyle.skus[eventSku].quantity; i += 1) {
-      if (i <= 15) {
-        quantityArray.push(i);
-      }
+    const maxQuantity = Math.min(currentStyle.skus[eventSku].quantity, 15);
+    for (let i = 1; i <= maxQuantity; i += 1) {
+      quantityArray.push(i);
     }
-    setQuantity(quantityArray);
+    setQuantities(quantityArray);
   }
 
   return (
@@ -27,7 +26,7 @@ export default function CartForm({ currentStyle }) {
       {selectedSku !== 'default'
         ? (
           <select className="select-quantity">
-            {quantity.map((item) => <option key={item} value={item}>{item}</option>)}
+            {quantities.map((item) => <option key={item} value={item}>{item}</option>)}
           </select>
         )
         : (

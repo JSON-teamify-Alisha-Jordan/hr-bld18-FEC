@@ -9,13 +9,8 @@ export default function StyleSelection({ currentStyle, changeSelectedStyle }) {
   const { styles } = useContext(ProductContext);
 
   function handleStyleSelection(event) {
-    let newSelection;
     const selectionId = event.target.attributes[0].value;
-    for (let i = 0; i < styles.length; i += 1) {
-      if (+(styles[i].style_id) === +(selectionId)) {
-        newSelection = styles[i];
-      }
-    }
+    const newSelection = styles.find((style) => +(style.style_id) === +(selectionId));
     changeSelectedStyle(newSelection);
   }
 
