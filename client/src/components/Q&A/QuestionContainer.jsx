@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import React from 'react';
-import QuestionRow from './QuestionRow.jsx';
+import QuestionRow from './QuestionRow';
 
 export default function QuestionContainer({ searchTerm }) {
   return (

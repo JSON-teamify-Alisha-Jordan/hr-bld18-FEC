@@ -1,9 +1,9 @@
 /* eslint-disable import/extensions */
 import React, { useState } from 'react';
-import SearchBar from './SearchBar.jsx';
-import QuestionContainer from './QuestionContainer.jsx';
-import AddQuestion from './AddQuestion.jsx';
-import AddQModal from './AddQModal.jsx';
+import SearchBar from './SearchBar';
+import QuestionContainer from './QuestionContainer';
+import AddQuestion from './AddQuestion';
+import AddQModal from './AddQModal';
 
 export default function QA({ show, setShow }) {
   const [searchTerm, setSearchTerm] = useState('');

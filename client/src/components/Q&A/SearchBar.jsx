@@ -6,6 +6,8 @@ export default function SearchBar({ setSearchTerm }) {
     const search = event.nativeEvent.target.value;
     if (search.length >= 3) {
       setSearchTerm(search);
+    } else if (search.length === 0) {
+      setSearchTerm('');
     }
   }
 
