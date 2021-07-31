@@ -1,21 +1,29 @@
 /* eslint-disable import/extensions */
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
-import AnswerRow from './AnswerRow.jsx';
-import Helpful from './Helpful.jsx';
+import AnswerRow from './AnswerRow';
+import Helpful from './Helpful';
 
-export default function QuestionRow() {
+export default function QuestionRow({ searchTerm }) {
   const { questions } = useContext(ProductContext);
 
   let count = 2;
-  const renderedQuestions = questions.slice(0, count);
+  const renderedQuestions = questions.slice(0, count).filter(
+    (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
+  );
   return (
     <div
-      className="questionsRow"
+      className="questions-row"
       style={{ border: '2px solid slateblue' }}
     >
       <Helpful />
-      {renderedQuestions.map((question) => <div>Q: {question.question_body} <AnswerRow /> </div>)}
+      {renderedQuestions.map((question) => (
+        <div key={question.question_id}>
+          Q:
+          {question.question_body}
+          <AnswerRow questionId={question.question_id} />
+        </div>
+      ))}
     </div>
   );
 }
