@@ -7,8 +7,8 @@ export default function AddQModal({ show, setShow }) {
       className="modal-wrapper"
       style={{
         border: '2px solid slateblue',
-        opacity: show ? '1' : '0',
         transform: show ? 'translateY(0vh)' : 'translateY(-100vh)',
+        opacity: show ? '1' : '0',
         zIndex: show ? '1' : '-1',
         position: 'relative',
       }}

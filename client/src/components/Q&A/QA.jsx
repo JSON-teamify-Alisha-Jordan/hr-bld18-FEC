@@ -7,10 +7,10 @@ import AddQModal from './AddQModal.jsx';
 
 export default function QA({ show, setShow }) {
   const [searchTerm, setSearchTerm] = useState('');
-  console.log(searchTerm);
+
   return (
     <div
-      className="mainContainer"
+      className="main-container"
       style={{ border: '2px solid slateblue' }}
     >
       <h2>Questions & Answers</h2>

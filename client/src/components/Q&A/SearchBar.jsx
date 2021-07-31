@@ -11,13 +11,13 @@ export default function SearchBar({ setSearchTerm }) {
 
   return (
     <div
-      className="searchBar"
+      className="search-bar"
       style={{ border: '2px solid slateblue' }}
     >
       Hello from Search Bar
       <form>
         <input
-          className="searchInput"
+          className="search-input"
           placeholder="Have a question? Search for answers…"
           onChange={handleSearch}
         />

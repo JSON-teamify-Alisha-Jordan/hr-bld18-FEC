@@ -2,14 +2,14 @@
 import React from 'react';
 import QuestionRow from './QuestionRow.jsx';
 
-export default function QuestionContainer() {
+export default function QuestionContainer({ searchTerm }) {
   return (
     <div
-      className="questionsContainer"
+      className="questions-container"
       style={{ border: '2px solid slateblue' }}
     >
       Hello from Container
-      <QuestionRow />
+      <QuestionRow searchTerm={searchTerm} />
     </div>
   );
 }

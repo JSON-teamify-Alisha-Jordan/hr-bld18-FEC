@@ -4,14 +4,14 @@ import ProductContext from '../../context';
 import AnswerRow from './AnswerRow.jsx';
 import Helpful from './Helpful.jsx';
 
-export default function QuestionRow() {
+export default function QuestionRow({ searchTerm }) {
   const { questions } = useContext(ProductContext);
 
   let count = 2;
   const renderedQuestions = questions.slice(0, count);
   return (
     <div
-      className="questionsRow"
+      className="questions-row"
       style={{ border: '2px solid slateblue' }}
     >
       <Helpful />

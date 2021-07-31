@@ -22,11 +22,13 @@ export default function AnswerRow({ questionId }) {
 
   return (
     <div
-      className="answersRow"
+      className="answers-row"
       style={{ border: '2px solid slateblue' }}
     >
       A:
       {answers.map((answer) => answer.body)}
+      <br />
+      {answers.length > 1 ? <span>Load More Answers</span> : <></>}
     </div>
   );
 }
