@@ -7,43 +7,27 @@
   -webkit-text-stroke-color: rgb(186, 186, 186);
 }
 
-.star25::after {
+.star25::after, .star50::after, .star75::after, .star100::after {
   content: "\f005";
   position: absolute;
   left: 0;
   top: 0;
-  width: 25%;
   overflow: hidden;
   color: rgb(254, 217, 30);
+}
+
+.star25::after {
+  width: 30%;
 }
 
 .star50::after {
-  content: "\f005";
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 50%;
-  overflow: hidden;
-  color: rgb(254, 217, 30);
 }
 
 .star75::after {
-  content: "\f005";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 75%;
-  overflow: hidden;
-  color: rgb(254, 217, 30);
+  width: 70%;
 }
 
 .star100::after {
-  content: "\f005";
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
-  overflow: hidden;
-  color: rgb(254, 217, 30);
 }
-

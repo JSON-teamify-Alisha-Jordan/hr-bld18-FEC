@@ -12,8 +12,8 @@ export default function Stars({ rating }) {
 
   return (
     <>
-      {starFillArray.map((value) => (
-        <i key={Math.random()} className={`star star${value} fas fa-star`} />))}
+      {starFillArray.map((value, index) => (
+        <i key={index} className={`star star${value} fas fa-star`} />))}
     </>
   );
 }
