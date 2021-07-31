@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function SearchBar({ setSearchTerm }) {
   function handleSearch(event) {
-    const search = event.nativeEvent.target.value;
+    const search = event.target.value;
     if (search.length >= 3) {
       setSearchTerm(search);
     } else if (search.length === 0) {
