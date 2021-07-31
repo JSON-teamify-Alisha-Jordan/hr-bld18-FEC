@@ -1,6 +1,5 @@
-/* eslint-disable guard-for-in */
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable import/extensions */
-/* eslint-disable no-restricted-syntax */
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
 import Stars from '../Stars.jsx';
@@ -15,11 +14,15 @@ export default function InfoContainer({ currentStyle, changeSelectedStyle }) {
 
   return (
     <div className="info-container">
-      <div>
-        <Stars rating={rating} />
-        <a className="reviews-link" href="#reviews_anchor_name">Read all {totalReviews} reviews</a>
-      </div>
-      <ProductDetails />
+      {totalReviews === 0
+        ? null
+        : (
+          <div>
+            <Stars rating={rating} />
+            <a className="reviews-link" href="#reviews_anchor_name">Read all {totalReviews} reviews</a>
+          </div>
+        )}
+      <ProductDetails currentStyle={currentStyle} />
       <StyleSelection currentStyle={currentStyle} changeSelectedStyle={changeSelectedStyle} />
     </div>
   );
