@@ -28,7 +28,7 @@ export default function AnswerRow({ questionId }) {
       A:
       {answers.map((answer) => answer.body)}
       <br />
-      {answers.length > 1 ? <span>Load More Answers</span> : <></>}
+      {answers.length > 2 ? <span>Load More Answers</span> : <></>}
     </div>
   );
 }
