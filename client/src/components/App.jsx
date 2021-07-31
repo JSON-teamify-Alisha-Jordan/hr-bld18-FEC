@@ -1,9 +1,8 @@
-/* eslint-disable import/extensions */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductContext from '../context';
-import Overview from './Overview/Overview.jsx';
-import QA from './Q&A/QA.jsx';
+import Overview from './Overview/Overview';
+import QA from './Q&A/QA';
 
 export default function App() {
   const [productID, setProductID] = useState('');
