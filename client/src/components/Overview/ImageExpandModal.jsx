@@ -25,7 +25,7 @@ export default function ImageExpandModal({ currentPhoto }) {
           </button>
         </div>
         <div>
-          <img src={currentPhoto} alt="cool people in cool clothing" />
+          <img className="overview-modal-image" src={currentPhoto} alt="cool people in cool clothing" />
         </div>
       </div>
     </div>

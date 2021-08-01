@@ -215,3 +215,8 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+
+.overview-modal-image {
+  max-height: 90vh;
+  width: auto;
+}
