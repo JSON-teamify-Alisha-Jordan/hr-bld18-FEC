@@ -3,6 +3,7 @@ import axios from 'axios';
 import ProductContext from '../context';
 import Overview from './Overview/Overview';
 import QA from './Q&A/QA';
+import RR from './R&R/RR';
 
 export default function App() {
   const [productID, setProductID] = useState('');
@@ -76,7 +77,6 @@ export default function App() {
         fetchReviews,
         fetchStyles,
         fetchQuestions,
-
         reviews,
         questions,
         reviewsMeta,
@@ -87,6 +87,7 @@ export default function App() {
       >
         <Overview />
         <QA show={show} setShow={setShow} />
+        <RR />
       </ProductContext.Provider>
     </>
   );

@@ -19,7 +19,7 @@ export default function InfoContainer({ currentStyle, changeSelectedStyle }) {
         : (
           <div>
             <Stars rating={rating} />
-            <a className="reviews-link" href="#reviews_anchor_name">Read all {totalReviews} reviews</a>
+            <a className="reviews-link" href="#ratings_and_reviews">Read all {totalReviews} reviews</a>
           </div>
         )}
       <ProductDetails currentStyle={currentStyle} />
