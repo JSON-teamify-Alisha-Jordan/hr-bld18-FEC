@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductContext from '../context';
-import Overview from './Overview/Overview.jsx';
-import QA from './Q&A/QA.jsx';
-import RR from './R&R/RR.jsx';
+import Overview from './Overview/Overview';
+import QA from './Q&A/QA';
+import RR from './R&R/RR';
 
 export default function App() {
   const [productID, setProductID] = useState('');
