@@ -2,10 +2,10 @@
 /* eslint-disable import/extensions */
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
-import Stars from '../Stars.jsx';
-import ProductDetails from './ProductDetails.jsx';
-import StyleSelection from './StyleSelection.jsx';
-import findAverageRating from '../../helperFunctions.js';
+import Stars from '../Stars';
+import ProductDetails from './ProductDetails';
+import StyleSelection from './StyleSelection';
+import findAverageRating from '../../helperFunctions';
 
 export default function InfoContainer({ currentStyle, changeSelectedStyle }) {
   const { reviewsMeta } = useContext(ProductContext);

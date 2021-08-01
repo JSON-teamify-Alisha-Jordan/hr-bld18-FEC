@@ -1,20 +1,35 @@
 /* eslint-disable import/extensions */
-import React, { useContext } from 'react';
-import ProductContext from '../../context';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export default function AnswerRow() {
-  const { questions } = useContext(ProductContext);
-  const tempID = '1992098';
-  const tempQuestion = questions[1];
+
+export default function AnswerRow({ questionId }) {
+  const [answers, setAnswers] = useState([]);
+
+  function fetchAnswers() {
+    axios
+      .get(`/qa/questions/${questionId}/answers`)
+      .then((answer) => {
+        setAnswers(answer.data.results);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
+  useEffect(() => {
+    fetchAnswers();
+  }, []);
 
   return (
     <div
-      className="answersRow"
+      className="answers-row"
       style={{ border: '2px solid slateblue' }}
     >
       A:
-      {/* {questions.map((question) => question.answers.body)} */}
-      {tempQuestion.answers[tempID].body}
+      {answers.map((answer) => answer.body)}
+      <br />
+      {answers.length > 2 ? <span>Load More Answers</span> : <></>}
     </div>
   );
 }

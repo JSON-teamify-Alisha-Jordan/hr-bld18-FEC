@@ -11,12 +11,12 @@ export default function ProductDetails({ currentStyle }) {
         ? <div className="price">${currentStyle.original_price}</div>
         : (
           <div className="price">
-            <span style={{ textDecorationLine: 'line-through' }}>${currentStyle.original_price}</span>
+            <span className="original-price">${currentStyle.original_price}</span>
             {' '}
-            <span style={{ color: 'red' }}>${currentStyle.sale_price}</span>
+            <span className="sale-price">${currentStyle.sale_price}</span>
           </div>
         )}
-      <div className="selected-style-display">STYLE > {currentStyle.name.toUpperCase()}</div>
+      <div className="selected-style-display">STYLE &gt; {currentStyle.name.toUpperCase()}</div>
     </>
   );
 }

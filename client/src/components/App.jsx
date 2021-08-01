@@ -1,10 +1,14 @@
-/* eslint-disable import/extensions */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductContext from '../context';
+<<<<<<< HEAD
 import Overview from './Overview/Overview.jsx';
 import QA from './Q&A/QA.jsx';
 import RR from './R&R/RR.jsx';
+=======
+import Overview from './Overview/Overview';
+import QA from './Q&A/QA';
+>>>>>>> 6fb8a2476a1ffa677f8beb52ff7928e20b88bf63
 
 export default function App() {
   const [productID, setProductID] = useState('');
@@ -18,7 +22,7 @@ export default function App() {
   function fetchProductID() {
     axios.get('/products')
       .then((result) => result.data)
-      .then((products) => products[0].id)
+      .then((products) => products[2].id)
       .then(setProductID);
   }
 
