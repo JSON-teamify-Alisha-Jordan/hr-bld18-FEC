@@ -5,7 +5,7 @@ import ReviewFeedback from './ReviewFeedback';
 
 export default function Review() {
   return (
-    <div>
+    <div className="review-container">
       <ReviewTopRow />
       <ReviewBody />
       <ReviewFeedback />
