@@ -6,8 +6,6 @@ export default function Helpful() {
     <div
       className="helpful"
       style={{ border: '2px solid slateblue' }}
-    >
-      Hello from Helpful
-    </div>
+    />
   );
 }

@@ -7,7 +7,6 @@ export default function AddQuestion({ setShow }) {
       className="add-question"
       style={{ border: '2px solid slateblue' }}
     >
-      Hello from Add Question
       <br />
       <button
         className="more-questions-btn"

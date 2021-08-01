@@ -5,11 +5,11 @@
 .question-row,
 .answers-row,
 .add-question {
-  margin: 8px;
+  margin: 1.25em;
 }
 
 .search-input {
-  height: 35px;
+  height: 3em;
   width: 55vw;
 }
 

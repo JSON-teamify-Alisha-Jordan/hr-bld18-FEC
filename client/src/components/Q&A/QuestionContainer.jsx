@@ -8,7 +8,6 @@ export default function QuestionContainer({ searchTerm }) {
       className="questions-container"
       style={{ border: '2px solid slateblue' }}
     >
-      Hello from Container
       <QuestionRow searchTerm={searchTerm} />
     </div>
   );

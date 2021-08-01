@@ -17,7 +17,7 @@ export default function AddQModal({ show, setShow }) {
         <p>Hello from Modal</p>
         <span
           onClick={() => setShow(false)}
-          className="close-modal-btn"
+          className="qa-close-modal-btn"
         >X
         </span>
       </div>
