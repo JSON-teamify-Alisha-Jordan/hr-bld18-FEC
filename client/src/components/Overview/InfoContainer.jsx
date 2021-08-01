@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable import/extensions */
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
 import Stars from '../Stars';

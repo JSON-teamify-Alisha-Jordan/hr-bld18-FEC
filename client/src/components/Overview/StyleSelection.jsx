@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
 import CartForm from './CartForm';

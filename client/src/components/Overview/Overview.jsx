@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-syntax */
 import React, { useContext, useState, useEffect } from 'react';
 import ProductContext from '../../context';
 import ImageGallery from './ImageGallery';
