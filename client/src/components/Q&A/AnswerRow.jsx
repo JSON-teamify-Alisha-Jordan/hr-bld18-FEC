@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function AnswerRow({ questionId }) {
+export default function AnswerRow({ questionId, incrementCount }) {
   const [answers, setAnswers] = useState([]);
 
   function fetchAnswers() {
@@ -28,7 +28,7 @@ export default function AnswerRow({ questionId }) {
       A:
       {answers.map((answer) => answer.body)}
       <br />
-      {answers.length > 2 ? <span>Load More Answers</span> : <></>}
+      {answers.length > 2 ? <button className="load-answers" type="button" onClick={incrementCount}>Load More Answers</button> : <></>}
     </div>
   );
 }

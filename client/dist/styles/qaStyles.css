@@ -22,3 +22,9 @@
   outline: none;
   cursor: pointer;
 }
+
+.question-row {
+  background: rgb(194, 194, 194);
+  /* display: grid;
+  grid-template-columns: 70% 30%; */
+}
