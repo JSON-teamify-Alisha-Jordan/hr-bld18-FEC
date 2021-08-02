@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
 

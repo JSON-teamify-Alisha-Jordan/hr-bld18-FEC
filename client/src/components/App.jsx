@@ -4,6 +4,7 @@ import ProductContext from '../context';
 import Overview from './Overview/Overview';
 import QA from './Q&A/QA';
 import RR from './R&R/RR';
+import Header from './Overview/Header';
 
 export default function App() {
   const [productID, setProductID] = useState('');
@@ -13,6 +14,7 @@ export default function App() {
   const [reviewsMeta, setReviewsMeta] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [show, setShow] = useState(false);
+  const [showImageModal, setShowImageModal] = useState(false);
 
   function fetchProductID() {
     axios.get('/products')
@@ -73,10 +75,13 @@ export default function App() {
   return (
     <>
       {show ? <div className="modal-backdrop" onClick={() => setShow(false)} /> : null}
+      {showImageModal ? <div className="modal-backdrop" onClick={() => setShowImageModal(false)} /> : null}
       <ProductContext.Provider value={{
         fetchReviews,
         fetchStyles,
         fetchQuestions,
+        setShowImageModal,
+        showImageModal,
         reviews,
         questions,
         reviewsMeta,
@@ -85,6 +90,7 @@ export default function App() {
         styles,
       }}
       >
+        <Header />
         <Overview />
         <QA show={show} setShow={setShow} />
         <RR />
