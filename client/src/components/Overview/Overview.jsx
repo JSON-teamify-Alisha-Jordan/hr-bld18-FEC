@@ -1,22 +1,16 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable import/extensions */
 import React, { useContext, useState, useEffect } from 'react';
 import ProductContext from '../../context';
-import ImageGallery from './ImageGallery.jsx';
-import InfoContainer from './InfoContainer.jsx';
-import FeaturesContainer from './FeaturesContainer.jsx';
+import ImageGallery from './ImageGallery';
+import InfoContainer from './InfoContainer';
+import FeaturesContainer from './FeaturesContainer';
 
 export default function Overview() {
   const { styles } = useContext(ProductContext);
   const [currentStyle, setCurrentStyle] = useState(null);
 
   function findDefaultStyle() {
-    for (const style of styles) {
-      if (style['default?'] === true) {
-        setCurrentStyle(style);
-        break;
-      }
-    }
+    const defaultStyle = styles.find((style) => style['default?'] === true);
+    setCurrentStyle(defaultStyle);
   }
 
   function changeSelectedStyle(styleObj) {

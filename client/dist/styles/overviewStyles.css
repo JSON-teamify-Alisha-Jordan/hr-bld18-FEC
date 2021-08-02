@@ -8,6 +8,17 @@ body {
   margin-right: auto;
   background-color: rgb(252, 252, 252);
 }
+
+.page-header {
+  height: 3em;
+  background-color: rgba(9, 0, 89, 0.5);
+  padding: 1em 0 0 1em;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 .overview-container {
   display: grid;
   grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
@@ -19,6 +30,17 @@ body {
   grid-row: 1 / span 7;
   grid-column: 1 / span 6;
   padding: 1em;
+  max-width: 48.3em;
+  position: relative;
+  display: flex;
+}
+
+.main-gallery-photo {
+  margin: auto;
+  display: block;
+  max-height: 32em;
+  max-width: 48em;
+  object-fit: contain;
 }
 
 .feature-container {
@@ -34,16 +56,22 @@ body {
   grid-row: 1 / span 7;
   grid-column: 7 / span 4;
   padding: 1em;
+  overflow-y: scroll;
 }
 
+.gallery-thumb,
 .style-select-thumb-transparent,
 .style-select-thumb {
   object-fit: cover;
   border-radius: 50%;
-  height: 6em;
-  width: 6em;
-  margin: 0.20em;
+  height: 5em;
+  width: 5em;
+  margin: 0 0.80em 0 0.80em;
   cursor: pointer;
+}
+
+.gallery-thumb {
+  padding: 0.2em 0 0.2em 0;
 }
 
 .style-select-thumb {
@@ -63,6 +91,24 @@ body {
   padding: 0.5em 0 0.5em 0;
 }
 
+.gallery-thumb-container {
+  background-color: rgb(252, 252, 252);
+  border: 1px solid rgb(252, 252, 252);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1em;
+  min-height: 35em;
+  overflow-y: scroll;
+}
+
+.gallery-thumb-container:hover {
+  opacity: 1.0;
+}
+
 .overview-features-list {
   list-style: none;
   margin-left: 1em;
@@ -79,7 +125,7 @@ body {
 
 .product-description {
   border-right: 0.15em solid gray;
-  padding-right: 1em;
+  padding: 0 1em 0 2em;
 }
 
 .product-category {
@@ -102,6 +148,10 @@ body {
 .price {
   margin: 0.5em 0 0.5em 0;
   font-size: 1.1em;
+}
+
+.original-price {
+  text-decoration: line-through;
 }
 
 .selected-style-display {
@@ -130,5 +180,43 @@ body {
 }
 
 .social {
-  margin: 0.15em;
+  margin: 0.20em;
+  padding: 0.10em;
+}
+
+.social-link {
+  color: black;
+}
+
+.sale-price,
+.please-select-size {
+  color:red;
+}
+
+.image-expand,
+.image-arrow {
+  font-size: 2em;
+  color:rgba(108, 108, 108, 0.9);
+  cursor: pointer;
+}
+
+.image-expand {
+  left: 94%;
+  top: 7%;
+  position: absolute;
+}
+
+.arrow-container {
+  position: absolute;
+  top: 50%;
+  min-width: 39em;
+  left: 17%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.overview-modal-image {
+  max-height: 90vh;
+  width: auto;
 }

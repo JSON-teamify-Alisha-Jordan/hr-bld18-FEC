@@ -1,9 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable import/extensions */
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
-import CartForm from './CartForm.jsx';
+import CartForm from './CartForm';
 
 export default function StyleSelection({ currentStyle, changeSelectedStyle }) {
   const { styles } = useContext(ProductContext);
