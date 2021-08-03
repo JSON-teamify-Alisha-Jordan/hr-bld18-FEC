@@ -12,16 +12,6 @@
   width: 55vw;
 }
 
-.open-modal-btn {
-  background: rgba(9, 0, 89, 0.854);
-  color: rgb(255, 255, 255);
-  font-size: 1em;
-  margin: 1em;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
 .question-row {
   background: rgb(194, 194, 194);
   /* display: grid;
