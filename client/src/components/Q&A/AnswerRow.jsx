@@ -31,7 +31,7 @@ export default function AnswerRow({ questionId }) {
         </div>
       ))}
       {answers.length > 2
-        ? <button className="load-answers" type="button" onClick={incrementCount}>Load More Answers</button>
+        ? <button className="load-answers" type="button">Load More Answers</button>
         : <></>} <br />
     </div>
   );
