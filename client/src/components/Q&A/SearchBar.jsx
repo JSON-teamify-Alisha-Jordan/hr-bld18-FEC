@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import React from 'react';
 
 export default function SearchBar({ setSearchTerm }) {
@@ -6,7 +5,7 @@ export default function SearchBar({ setSearchTerm }) {
     const search = event.target.value;
     if (search.length >= 3) {
       setSearchTerm(search);
-    } else if (search.length === 0) {
+    } else {
       setSearchTerm('');
     }
   }
@@ -16,7 +15,6 @@ export default function SearchBar({ setSearchTerm }) {
       className="search-bar"
       style={{ border: '2px solid slateblue' }}
     >
-      Hello from Search Bar
       <form>
         <input
           className="search-input"

@@ -1,24 +1,29 @@
 .main-container,
 .search-bar,
 .question-container,
-.helpful,
 .question-row,
 .answers-row,
 .add-question {
-  margin: 8px;
+  margin: 1.25em;
 }
 
 .search-input {
-  height: 35px;
+  height: 3em;
   width: 55vw;
 }
 
 .open-modal-btn {
-  background: rgb(97, 97, 97);
-  color: rgb(143, 251, 255);
-  font-size: 1.25em;
+  background: rgba(9, 0, 89, 0.854);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
   margin: 1em;
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.question-row {
+  background: rgb(194, 194, 194);
+  /* display: grid;
+  grid-template-columns: 70% 30%; */
 }

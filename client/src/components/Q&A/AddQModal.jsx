@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import React from 'react';
 
 export default function AddQModal({ show, setShow }) {
@@ -6,19 +5,20 @@ export default function AddQModal({ show, setShow }) {
     <div
       className="modal-wrapper"
       style={{
-        border: '2px solid slateblue',
-        transform: show ? 'translateY(0vh)' : 'translateY(-100vh)',
+        transform: show ? 'translate(0, 60em)' : 'translateY(-100vh)',
         opacity: show ? '1' : '0',
         zIndex: show ? '1' : '-1',
-        position: 'relative',
+        position: 'absolute',
+        left: '25%',
+        top: '25%',
       }}
     >
       <div className="modal-header">
         <p>Hello from Modal</p>
         <span
           onClick={() => setShow(false)}
-          className="close-modal-btn"
-        >X
+          className="qa-close-modal-btn"
+        ><b>X</b>
         </span>
       </div>
       <div className="modal-content">
@@ -32,7 +32,7 @@ export default function AddQModal({ show, setShow }) {
             onClick={() => setShow(false)}
             type="button"
           >
-            Close
+            <b>Close</b>
           </button>
         </div>
       </div>
