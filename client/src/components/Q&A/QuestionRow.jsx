@@ -22,10 +22,11 @@ export default function QuestionRow({ searchTerm }) {
       style={{ border: '2px solid slateblue' }}
     >
       {renderedQuestions.map((question) => (
-        <div className="question" key={question.question_id}>
-          <Helpful />
-          Q:
-          {question.question_body}
+        <div
+          className="question"
+          key={question.question_id}
+        >
+          <b>Q: {question.question_body}</b> <Helpful />
           <AnswerRow
             questionId={question.question_id}
             count={incrementCount}

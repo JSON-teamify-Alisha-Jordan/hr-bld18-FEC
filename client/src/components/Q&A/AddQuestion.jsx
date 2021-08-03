@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import React from 'react';
 
 export default function AddQuestion({ setShow }) {
@@ -6,7 +5,7 @@ export default function AddQuestion({ setShow }) {
     <div
       className="add-question"
       style={{ border: '2px solid slateblue' }}
-    >
+    >{}
       <br />
       <button
         className="more-questions-btn"

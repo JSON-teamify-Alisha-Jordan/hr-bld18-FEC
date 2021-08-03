@@ -1,8 +1,8 @@
-/* eslint-disable import/extensions */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Report from './Report';
 
-export default function AnswerRow({ questionId }) {
+export default function AnswerRow({ questionId, incrementCount }) {
   const [answers, setAnswers] = useState([]);
 
   function fetchAnswers() {
@@ -25,10 +25,14 @@ export default function AnswerRow({ questionId }) {
       className="answers-row"
       style={{ border: '2px solid slateblue' }}
     >
-      A:
-      {answers.map((answer) => answer.body)}
-      <br />
-      {answers.length > 2 ? <button className="load-answers" type="button" onClick={incrementCount}>Load More Answers</button> : <></>}
+      {answers.map((answer) => (
+        <div key={answer.answer_id}><b>A:</b>{answer.body}
+          <br />by {answer.answerer_name}, {answer.date.slice(0, 10)} | <Report />
+        </div>
+      ))}
+      {answers.length > 2
+        ? <button className="load-answers" type="button" onClick={incrementCount}>Load More Answers</button>
+        : <></>} <br />
     </div>
   );
 }
