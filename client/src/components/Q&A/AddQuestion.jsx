@@ -5,7 +5,7 @@ export default function AddQuestion({ setShow }) {
     <div
       className="add-question"
       style={{ border: '2px solid slateblue' }}
-    >{}
+    >
       <br />
       <button
         className="more-questions-btn"

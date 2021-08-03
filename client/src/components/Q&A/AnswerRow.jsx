@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Report from './Report';
 
-export default function AnswerRow({ questionId, incrementCount }) {
+export default function AnswerRow({ questionId }) {
   const [answers, setAnswers] = useState([]);
 
   function fetchAnswers() {
