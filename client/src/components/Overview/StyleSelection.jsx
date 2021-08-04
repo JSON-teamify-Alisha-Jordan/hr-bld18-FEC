@@ -18,24 +18,27 @@ export default function StyleSelection({ currentStyle, changeSelectedStyle }) {
         {styles.map((style) => (
           style.style_id === currentStyle.style_id
             ? (
-              <img
-                key={style.style_id}
-                value={style.style_id}
-                className="style-select-thumb"
-                src={style.photos[0].thumbnail_url}
-                alt="cool person in product"
-                onClick={handleStyleSelection}
-              />
+              <div className="style-holder" key={style.style_id}>
+                <img
+                  value={style.style_id}
+                  className="style-select-thumb"
+                  src={style.photos[0].thumbnail_url}
+                  alt="cool person in product"
+                  onClick={handleStyleSelection}
+                />
+                <i className="far checkmark-overlay fa-check-circle" />
+              </div>
             )
             : (
-              <img
-                key={style.style_id}
-                value={style.style_id}
-                className="style-select-thumb-transparent"
-                src={style.photos[0].thumbnail_url}
-                alt="cool person in product"
-                onClick={handleStyleSelection}
-              />
+              <div className="style-holder" key={style.style_id}>
+                <img
+                  value={style.style_id}
+                  className="style-select-thumb-transparent"
+                  src={style.photos[0].thumbnail_url}
+                  alt="cool person in product"
+                  onClick={handleStyleSelection}
+                />
+              </div>
             )
         ))}
       </div>
