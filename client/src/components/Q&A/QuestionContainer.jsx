@@ -5,7 +5,6 @@ export default function QuestionContainer({ searchTerm }) {
   return (
     <div
       className="questions-container"
-      style={{ border: '2px solid slateblue' }}
     >
       <QuestionRow searchTerm={searchTerm} />
     </div>

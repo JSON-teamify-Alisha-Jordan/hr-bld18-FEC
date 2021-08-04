@@ -13,14 +13,13 @@ export default function QuestionRow({ searchTerm }) {
   }
 
   const renderedQuestions = questions.slice(0, count).filter(
-    (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
+    (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
   );
 
   console.log(questions);
   return (
     <div
       className="question-row"
-      style={{ border: '2px solid slateblue' }}
     >
       {renderedQuestions.map((question) => (
         <div

@@ -9,11 +9,11 @@
 
 .search-input {
   height: 3em;
-  width: 55vw;
+  width: 100%;
 }
 
-.question-row {
-  background: rgb(194, 194, 194);
-  /* display: grid;
-  grid-template-columns: 70% 30%; */
-}
+/* .question {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+} */

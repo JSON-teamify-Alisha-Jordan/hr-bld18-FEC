@@ -12,7 +12,7 @@ body {
   background: cadetblue;
   width: 80%;
   max-width: 800px;
-  margin: 4rem auto;
+  margin: 4em auto;
   transition: all 0.5s ease;
 }
 

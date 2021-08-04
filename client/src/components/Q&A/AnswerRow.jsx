@@ -23,7 +23,6 @@ export default function AnswerRow({ questionId }) {
   return (
     <div
       className="answers-row"
-      style={{ border: '2px solid slateblue' }}
     >
       {answers.map((answer) => (
         <div key={answer.answer_id}><b>A:</b>{answer.body}

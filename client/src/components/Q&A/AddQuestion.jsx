@@ -4,7 +4,6 @@ export default function AddQuestion({ setShow }) {
   return (
     <div
       className="add-question"
-      style={{ border: '2px solid slateblue' }}
     >
       <br />
       <button

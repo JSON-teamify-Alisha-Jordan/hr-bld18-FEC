@@ -10,7 +10,6 @@ export default function QA({ show, setShow }) {
   return (
     <div
       className="main-container"
-      style={{ border: '2px solid slateblue' }}
     >
       <h2>Questions & Answers</h2>
       <AddQModal show={show} setShow={setShow} />

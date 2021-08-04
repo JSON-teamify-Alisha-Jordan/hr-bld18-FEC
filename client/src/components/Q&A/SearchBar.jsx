@@ -13,7 +13,6 @@ export default function SearchBar({ setSearchTerm }) {
   return (
     <div
       className="search-bar"
-      style={{ border: '2px solid slateblue' }}
     >
       <form>
         <input
