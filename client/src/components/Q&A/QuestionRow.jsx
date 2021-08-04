@@ -16,6 +16,7 @@ export default function QuestionRow({ searchTerm }) {
     (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
   );
 
+  console.log(questions);
   return (
     <div
       className="question-row"
