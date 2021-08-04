@@ -1,7 +1,10 @@
 import React from 'react';
+import dayjs from 'dayjs';
 
-export default function UserAndDate() {
+export default function UserAndDate({ user, date }) {
+  const formattedDate = dayjs(date).format('MMMM D YYYY');
+
   return (
-    <span className="rr-user-and-date">User1234 January 1, 2019</span>
+    <span className="rr-user-and-date">{user}, {formattedDate}</span>
   );
 }

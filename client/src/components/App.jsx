@@ -3,7 +3,7 @@ import axios from 'axios';
 import ProductContext from '../context';
 import Overview from './Overview/Overview';
 import QA from './Q&A/QA';
-import RR from './R&R/RR';
+import RR from './R&R';
 import Header from './Overview/Header';
 
 export default function App() {

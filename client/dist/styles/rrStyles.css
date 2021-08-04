@@ -1,8 +1,8 @@
 .rr-container {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 13rem 1fr;
   padding: 1rem;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .rr-header {
@@ -17,6 +17,15 @@
   padding-top: 1.8rem;
   padding-bottom: .8rem;
   border-bottom: .1rem solid black;
+}
+
+.review-container div {
+  margin-top: .8rem;
+  margin-bottom: .8rem;
+}
+
+.review-body-container h4 {
+  margin-bottom: .8rem;
 }
 
 .reviews-list-header {
@@ -55,4 +64,51 @@
 
 .rr-n-stars {
   width: 2.42rem;
+}
+
+.rr-factor-slider-container {
+  margin-top: 1rem;
+  /* width: 12rem; */
+}
+
+.rr-factor-slider-container h4 {
+  font-weight: normal;
+}
+
+.rr-factor-slider {
+  margin-top: .5rem;
+  background-color: gray;
+  height: .7rem;
+  position: relative;
+}
+
+.rr-factor-slider span {
+  position: absolute;
+  top: -.5rem;
+}
+
+.rr-product-breakdown {
+  margin-top: 1.5rem;
+}
+
+.rr-factor-slider-label {
+  font-size: .8rem;
+}
+
+.rr-text-button {
+  /* reset default button styling */
+  border: none;
+  margin: 0 .5rem 0 .5rem;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+}
+
+.rr-text-button:hover {
+  color:blue;
+  cursor: pointer;
 }
