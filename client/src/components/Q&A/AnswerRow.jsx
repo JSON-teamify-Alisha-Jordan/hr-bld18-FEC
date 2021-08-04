@@ -32,8 +32,11 @@ export default function AnswerRow({ questionId }) {
       className="answers-row"
     >
       {renderedAnswers.map((answer) => (
-        <div key={answer.answer_id}><b>A:</b>{answer.body}
-          <br />by {answer.answerer_name}, {answer.date.slice(0, 10)} | <Report />
+        <div
+          className="answer"
+          key={answer.answer_id}
+        ><b>A: </b>{answer.body}
+          <br /><div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)} | <Report /></div>
         </div>
       ))}
       {answers.length > 2

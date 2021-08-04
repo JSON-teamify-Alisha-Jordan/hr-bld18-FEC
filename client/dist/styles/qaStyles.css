@@ -1,16 +1,16 @@
 .main-container,
-.question-row,
-.answers-row {
+.question-row {
   margin: 1.25em;
 }
 
 .search-input {
   height: 3em;
   width: 100%;
+  padding: 1em;
 }
 
 .questions-container {
-  height: 17.5em;
+  height: 18.5em;
   overflow-y: auto;
 }
 
@@ -21,6 +21,15 @@
 
 .load-text {
   margin-top: 20px;
+}
+
+.answer {
+  margin: 1em;
+}
+
+.by-line {
+  margin-top: .5em;
+  color: rgb(110, 110, 110);
 }
 
 .open-modal-btn,
