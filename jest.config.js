@@ -4,7 +4,7 @@
  */
 
 module.exports = {
-  setupFilesAfterEnv: ['./jest.setup.js'],
+  setupFilesAfterEnv: ['./jest.setup.js', '@testing-library/jest-dom/extend-expect'],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

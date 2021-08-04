@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -29,7 +30,7 @@ export default function CartForm({ currentStyle }) {
     event.preventDefault();
     validCart === true
       ? axios.post('/cart', { sku_id: selectedSku }).then(setValidCart(null))
-      : setValidCart(false)
+      : setValidCart(false);
   }
 
   return (
@@ -55,9 +56,9 @@ export default function CartForm({ currentStyle }) {
             </select>
           )}
         <button onClick={handleAddToCart} className="cart-submit-btn" value="submit" type="submit">Add to Cart</button>
-        <a className="social-link" href="https://twitter.com/login?lang=en"><i className="fab social fa-twitter fa-2x" /></a>
-        <a className="social-link" href="https://www.facebook.com/"><i className="fab social fa-facebook-square fa-2x" /></a>
-        <a className="social-link" href="#"><i className="far social fa-heart fa-2x" /></a>
+        <i className="fab social fa-twitter fa-2x" />
+        <i className="fab social fa-facebook-square fa-2x" />
+        <i className="far social fa-heart fa-2x" />
       </form>
     </>
   );

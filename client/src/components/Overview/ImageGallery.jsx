@@ -55,10 +55,11 @@ export default function ImageGallery({ currentStyle }) {
               {currentPhotoIndex === 0 ? <div />
                 : <div className="arrow-left"><i onClick={previousPhoto} className="fas image-arrow fa-chevron-left" /></div>}
               {currentPhotoIndex === maxIndex ? <div />
-                : <div className="arrow-right"><i onClick={nextPhoto} className="fas image-arrow fa-chevron-right" /></div>}
+                : <div data-testid="arrow-right" className="arrow-right"><i onClick={nextPhoto} className="fas image-arrow fa-chevron-right" /></div>}
             </div>
           )}
       </div>
     </>
   );
 }
+

@@ -39,7 +39,7 @@ export default function GalleryThumbnailBar({
     <>
       {minIndex === 0
         ? null
-        : <i onClick={showPreviousImageThumb} className="fas fa-chevron-up" />}
+        : <i onClick={showPreviousImageThumb} className="fas gall-thumb-arrows fa-chevron-up" />}
       {renderedThumbnails.map((photo, index) => (
         <img
           index={index}
@@ -51,9 +51,9 @@ export default function GalleryThumbnailBar({
           onClick={handlePhotoChange}
         />
       ))}
-      {minIndex + 6 === maxIndex
+      {minIndex + 6 >= maxIndex
         ? null
-        : <i onClick={showNextImageThumb} className="fas fa-chevron-down" />}
+        : <i onClick={showNextImageThumb} className="fas gall-thumb-arrows fa-chevron-down" />}
     </>
   );
 }
