@@ -1,22 +1,23 @@
-/* eslint-disable import/extensions */
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import ProductContext from '../../context';
 import AnswerRow from './AnswerRow';
 import Helpful from './Helpful';
 
-export default function QuestionRow({ searchTerm }) {
+export default function QuestionRow({ searchTerm, count }) {
   const { questions } = useContext(ProductContext);
-  const [count, setCount] = useState(2);
-
-  function incrementCount() {
-    setCount(count + 2);
-  }
+  // const [search, setSearch] = useState([]);
 
   const renderedQuestions = questions.slice(0, count).filter(
-    (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+    (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
   );
 
-  console.log(questions);
+  // const searchable = questions.map((question) => {
+  //   const { answers } = question;
+  //   debugger;
+  //   const { answerer_name } = answers;
+  //   return answerer_name;
+  // });
+
   return (
     <div
       className="question-row"
@@ -29,7 +30,6 @@ export default function QuestionRow({ searchTerm }) {
           <b>Q: {question.question_body}</b> <Helpful />
           <AnswerRow
             questionId={question.question_id}
-            count={incrementCount}
           />
           <br />
         </div>

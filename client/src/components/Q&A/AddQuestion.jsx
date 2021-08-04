@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AddQuestion({ setShow }) {
+export default function AddQuestion({ setShow, setCount }) {
   return (
     <div
       className="add-question"
@@ -8,7 +8,7 @@ export default function AddQuestion({ setShow }) {
       <br />
       <button
         className="more-questions-btn"
-        // onClick={setCount}
+        onClick={setCount}
         type="button"
       >
         More Answered Questions

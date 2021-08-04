@@ -1,9 +1,6 @@
 .main-container,
-.search-bar,
-.question-container,
 .question-row,
-.answers-row,
-.add-question {
+.answers-row {
   margin: 1.25em;
 }
 
@@ -12,8 +9,29 @@
   width: 100%;
 }
 
-/* .question {
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
-} */
+.questions-container {
+  height: 17.5em;
+  overflow-y: auto;
+}
+
+.load-answers :hover {
+  color: rgba(87, 73, 219, 0.854);
+  cursor: pointer;
+}
+
+.load-text {
+  margin-top: 20px;
+}
+
+.open-modal-btn,
+.more-questions-btn {
+  background: rgba(9, 0, 89, 0.854);
+  color: rgb(255, 255, 255);
+  height: 3em;
+  width: 10em;
+  font-size: 1em;
+  margin: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
