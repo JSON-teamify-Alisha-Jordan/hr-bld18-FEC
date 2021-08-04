@@ -1,12 +1,13 @@
-/* eslint-disable no-unused-expressions */
+
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
 export default function CartForm({ currentStyle }) {
   const [selectedSku, setSelectedSku] = useState('default');
   const [quantities, setQuantities] = useState([]);
   const [validCart, setValidCart] = useState(null);
+  const selectRef = useRef(null);
 
   const skuIds = Object.keys(currentStyle.skus);
 
@@ -26,11 +27,17 @@ export default function CartForm({ currentStyle }) {
     setQuantities(quantityArray);
   }
 
+  function handleInvalidCart() {
+    setValidCart(false);
+    selectRef.current.focus();
+  }
+
   function handleAddToCart(event) {
+    // debugger;
     event.preventDefault();
-    validCart === true
+    (validCart)
       ? axios.post('/cart', { sku_id: selectedSku }).then(setValidCart(null))
-      : setValidCart(false);
+      : handleInvalidCart();
   }
 
   return (
@@ -39,7 +46,7 @@ export default function CartForm({ currentStyle }) {
         ? <span className="please-select-size">*Please select a size</span>
         : null}
       <form>
-        <select className="select-size" defaultValue="default" onChange={handleSizeSelection}>
+        <select ref={selectRef} className="select-size" defaultValue="default" onChange={handleSizeSelection}>
           <option value="default">Select Size</option>
           {skuIds.map((sku) =>
             <option key={sku} value={sku}>{currentStyle.skus[sku].size}</option>)}
