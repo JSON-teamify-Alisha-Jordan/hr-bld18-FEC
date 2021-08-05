@@ -5,7 +5,7 @@ import ReviewsListHeader from './ReviewsListHeader';
 import Review from './Review';
 import ReviewsListButtonRow from './ReviewsListButtonRow';
 
-export default function ReviewsList() {
+export default function ReviewsList({ filters }) {
   const { productID } = useContext(ProductContext);
   const [count, setCount] = useState(2);
   const [sort, setSort] = useState('relevant');
@@ -29,11 +29,19 @@ export default function ReviewsList() {
     return <div>Loading...</div>;
   }
 
+  let anyFiltersOn = false;
+  for (let i = 1; i <= 5; i++) {
+    anyFiltersOn = anyFiltersOn || filters[i];
+  }
+
+  const filteredReviews = reviews.filter((review) => !anyFiltersOn
+    || filters[review.rating]).slice(0, count);
+
   return (
     <div className="reviews-list">
       <ReviewsListHeader numReviews={reviews.length} sort={sort} setSort={setSort} />
       <div className="reviews-container">
-        {reviews.slice(0, count).map((review) => <Review review={review} key={review.review_id} />)}
+        {filteredReviews.map((review) => <Review review={review} key={review.review_id} />)}
       </div>
       <ReviewsListButtonRow showTwoMoreReviews={showTwoMoreReviews} />
     </div>
