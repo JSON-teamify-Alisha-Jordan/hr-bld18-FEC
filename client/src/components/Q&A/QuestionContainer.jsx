@@ -2,21 +2,25 @@ import React, { useState } from 'react';
 import QuestionRow from './QuestionRow';
 import AddQuestion from './AddQuestion';
 
-export default function QuestionContainer({ searchTerm, setShow }) {
+export default function QuestionContainer({ searchTerm }) {
   const [count, setCount] = useState(2);
 
   function incrementQuestionCount() {
-    setCount(count + 2);
+    setCount((previousCount) => previousCount + 2);
   }
 
   return (
     <>
-      <div
-        className="questions-container"
-      >
-        <QuestionRow searchTerm={searchTerm} count={count} />
+      <div className="questions-container">
+        <QuestionRow
+          searchTerm={searchTerm}
+          count={count}
+        />
       </div>
-      <AddQuestion setShow={setShow} count={count} setCount={incrementQuestionCount} />
+      <AddQuestion
+        count={count}
+        setCount={incrementQuestionCount}
+      />
     </>
   );
 }

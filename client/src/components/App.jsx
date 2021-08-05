@@ -12,8 +12,9 @@ export default function App() {
   const [styles, setStyles] = useState([]);
   const [reviewsMeta, setReviewsMeta] = useState(null);
   const [questions, setQuestions] = useState([]);
-  const [show, setShow] = useState(false);
+  const [showAddQuestionModal, setShowAddQuestionModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
+  const [showAddAnswerModal, setShowAddAnswerModal] = useState(false);
 
   function fetchProductID() {
     axios.get('/products')
@@ -70,13 +71,18 @@ export default function App() {
   }
   return (
     <>
-      {show ? <div className="modal-backdrop" onClick={() => setShow(false)} /> : null}
+      {showAddQuestionModal ? <div className="modal-backdrop" onClick={() => setShowAddQuestionModal(false)} /> : null}
       {showImageModal ? <div className="modal-backdrop" onClick={() => setShowImageModal(false)} /> : null}
+      {showAddAnswerModal ? <div className="modal-backdrop" onClick={() => setShowAddAnswerModal(false)} /> : null}
       <ProductContext.Provider value={{
         fetchStyles,
         fetchQuestions,
         setShowImageModal,
         showImageModal,
+        setShowAddAnswerModal,
+        showAddAnswerModal,
+        setShowAddQuestionModal,
+        showAddQuestionModal,
         questions,
         reviewsMeta,
         productID,
@@ -86,7 +92,7 @@ export default function App() {
       >
         <Header />
         <Overview />
-        <QA show={show} setShow={setShow} />
+        <QA />
         <RR />
       </ProductContext.Provider>
     </>

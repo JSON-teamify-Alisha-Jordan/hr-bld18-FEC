@@ -17,7 +17,7 @@ export default function SearchBar({ setSearchTerm }) {
       <form>
         <input
           className="search-input"
-          placeholder="Have a question? Search for answers…"
+          placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS…"
           onChange={handleSearch}
         />
       </form>
