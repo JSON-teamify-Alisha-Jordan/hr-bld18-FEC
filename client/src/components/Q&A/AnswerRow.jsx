@@ -12,19 +12,14 @@ export default function AnswerRow({ questionId }) {
 
   const renderedAnswers = answers.slice(0, count);
 
-  function fetchAnswers() {
+  useEffect(() => {
+    let isMounted = true;
     axios
       .get(`/qa/questions/${questionId}/answers`)
       .then((answer) => {
-        setAnswers(answer.data.results);
-      })
-      .catch((err) => {
-        console.error(err);
+        if (isMounted) setAnswers(answer.data.results);
       });
-  }
-
-  useEffect(() => {
-    fetchAnswers();
+    return () => { isMounted = false; };
   }, []);
 
   return (

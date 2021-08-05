@@ -1,4 +1,5 @@
-
+/* eslint-disable no-unused-expressions */
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
@@ -42,13 +43,12 @@ export default function CartForm({ currentStyle }) {
   return (
     <>
       {validCart === false
-        ? <span className="please-select-size">*Please select a size</span>
+        ? <span data-testid="selectSize" className="please-select-size">*Please select a size</span>
         : null}
       <form>
         <select ref={selectRef} className="select-size" defaultValue="default" onChange={handleSizeSelection}>
           <option value="default">Select Size</option>
-          {skuIds.map((sku) =>
-            <option key={sku} value={sku}>{currentStyle.skus[sku].size}</option>)}
+          {skuIds.map((sku) => <option key={sku} value={sku}>{currentStyle.skus[sku].size}</option>)}
         </select>
         {selectedSku !== 'default'
           ? (
@@ -61,7 +61,7 @@ export default function CartForm({ currentStyle }) {
               <option value="default">-</option>
             </select>
           )}
-        <button onClick={handleAddToCart} className="cart-submit-btn" value="submit" type="submit">Add to Cart</button>
+        <button onClick={handleAddToCart} data-testid="cartButton" className="cart-submit-btn" value="submit" type="submit">Add to Cart</button>
         <i className="fab social fa-twitter fa-2x" />
         <i className="fab social fa-facebook-square fa-2x" />
         <i className="far social fa-heart fa-2x" />
