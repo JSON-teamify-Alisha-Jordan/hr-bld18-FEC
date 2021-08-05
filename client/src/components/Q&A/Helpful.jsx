@@ -10,7 +10,7 @@ export default function Helpful() {
   return (
     <span
       className="helpful"
-    >Helpful? <u onClick={handleCount}>Yes</u>({count}) | <u>Add Answer</u>
+    >Helpful?  <u onClick={handleCount}> Yes</u>({count}) | <u>Add Answer</u>
     </span>
   );
 }

@@ -9,7 +9,7 @@ body {
 }
 
 .modal-wrapper {
-  background: cadetblue;
+  background: white;
   width: 80%;
   max-width: 800px;
   margin: 4em auto;
@@ -17,8 +17,7 @@ body {
 }
 
 .modal-header {
-  background: darkslategray;
-  color: aquamarine;
+  background: rgba(9, 0, 89, 0.5);
   padding: 1em;
   display: flex;
   align-items: center;
@@ -53,16 +52,17 @@ body {
 .modal-body input {
   width: 12em;
   height: 2.25em;
+  padding: 0.5em;
 }
 
 .modal-footer button {
   display: block;
   font-size: 1em;
   padding: 0.5em 1.8em;
-  background: rgba(9, 0, 89, 0.854);
-  color: white;
+  background: white;
+  color: black;
   border: none;
-  outline: none;
+  outline: 1px solid black;
   cursor: pointer;
 }
 
@@ -96,4 +96,8 @@ body {
   resize: none;
   height: 13em;
   width: 100%;
+}
+
+.modal-input {
+  padding: 0.5em;
 }
