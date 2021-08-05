@@ -10,7 +10,7 @@ export default function QA() {
     <div
       className="main-container"
     >
-      <h2>Questions & Answers</h2>
+      <h2 className="QA-header">QUESTIONS & ANSWERS</h2>
       <AddQModal />
       <SearchBar setSearchTerm={setSearchTerm} />
       <AddAnswerModal />
