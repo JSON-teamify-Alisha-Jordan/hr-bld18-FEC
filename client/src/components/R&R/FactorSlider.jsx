@@ -17,8 +17,8 @@ export default function FactorSlider({ name, value }) {
         <span style={{ left: `${offset}rem` }}>&#9660;</span>
       </div>
       <div className="rr-factor-slider-labels">
-        <span className="rr-factor-slider-label">Too small</span>
-        <span className="rr-factor-slider-label rr-right-label">Too large</span>
+        <span>Too small</span>
+        <span>Too large</span>
       </div>
     </div>
   );
