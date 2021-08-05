@@ -1,6 +1,6 @@
 .rr-container {
   display: grid;
-  grid-template-columns: 13rem 1fr;
+  grid-template-columns: 14rem 1fr;
   padding: 1rem;
   gap: 2rem;
 }
@@ -11,6 +11,15 @@
 
 .rr-avg-rating {
   font-size: 3rem;
+}
+
+.reviews-list {
+  min-width: 0;
+}
+
+.reviews-container {
+  max-height: 80vh;
+  overflow: scroll;
 }
 
 .review-container {
@@ -26,6 +35,8 @@
 
 .review-body-container h4 {
   margin-bottom: .8rem;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .reviews-list-header {

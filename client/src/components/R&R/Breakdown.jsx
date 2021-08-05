@@ -31,8 +31,6 @@ const calculatePercentRecommended = (recommendedObj) => {
 
 export default function Breakdown() {
   const { reviewsMeta } = useContext(ProductContext);
-  console.log(reviewsMeta);
-
   const numReviews = calculateNumReviews(reviewsMeta.ratings);
   const averageRating = calculateAverage(reviewsMeta.ratings);
   const percentRecommended = calculatePercentRecommended(reviewsMeta.recommended);
@@ -41,8 +39,8 @@ export default function Breakdown() {
     <div>
       <RatingSummary rating={averageRating} />
       <RecommendationSummary percent={percentRecommended} />
-      <RatingBreakdown />
-      <ProductBreakdown />
+      <RatingBreakdown ratings={{ ...reviewsMeta.ratings, numReviews }} />
+      <ProductBreakdown characteristics={reviewsMeta.characteristics} />
     </div>
   );
 }

@@ -8,9 +8,11 @@ export default function ReviewsList() {
   const { reviews } = useContext(ProductContext);
 
   return (
-    <div>
+    <div className="reviews-list">
       <ReviewsListHeader numReviews={reviews.length} />
-      {reviews.map((review) => <Review review={review} key={review.review_id} />)}
+      <div className="reviews-container">
+        {reviews.map((review) => <Review review={review} key={review.review_id} />)}
+      </div>
       <ReviewsListButtonRow />
     </div>
   );

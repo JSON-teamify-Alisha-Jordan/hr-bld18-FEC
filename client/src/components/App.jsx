@@ -19,7 +19,7 @@ export default function App() {
   function fetchProductID() {
     axios.get('/products')
       .then((result) => result.data)
-      .then((products) => products[4].id)
+      .then((products) => products[0].id)
       .then(setProductID);
   }
 
@@ -35,13 +35,17 @@ export default function App() {
       .then(setStyles);
   }
 
-  function fetchReviews(count = 2) {
+  function fetchReviews() {
     axios.get('/reviews/meta', { params: { product_id: productID } })
       .then((result) => result.data)
       .then((data) => {
         setReviewsMeta(data);
       });
-    axios.get('/reviews', { params: { product_id: productID, sort: 'relevant', count } })
+    axios.get('/reviews', {
+      params: {
+        product_id: productID, sort: 'relevant', page: 1, count: 500,
+      },
+    })
       .then((result) => result.data.results)
       .then(setReviews);
   }
