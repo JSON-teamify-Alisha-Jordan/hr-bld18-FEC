@@ -47,8 +47,21 @@
   float: right;
 }
 
+.rr-rating-breakdown-container {
+  margin: .8rem 0;
+}
+
+.rr-rating-breakdown-container h3 {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.rr-rating-breakdown-container p {
+  font-style: italic;
+}
+
 .rr-recommendation-summary {
-  font-size: .8rem;
+  font-size: .9rem;
 }
 
 .rr-star-filter {

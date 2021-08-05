@@ -12,17 +12,10 @@ export default function RatingsAndReviews() {
     1: false,
   });
 
-  function toggleFilterN(n) {
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [n]: !prevFilters[n],
-    }));
-  }
-
   return (
     <div className="rr-container">
       <h2 id="ratings_and_reviews" className="rr-header">Ratings & Reviews</h2>
-      <Breakdown filters={filters} toggleFilterN={toggleFilterN} />
+      <Breakdown filters={filters} setFilters={setFilters} />
       <ReviewsList filters={filters} />
     </div>
   );
