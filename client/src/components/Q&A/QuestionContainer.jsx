@@ -6,7 +6,7 @@ export default function QuestionContainer({ searchTerm, setShow }) {
   const [count, setCount] = useState(2);
 
   function incrementQuestionCount() {
-    setCount(count + 2);
+    setCount((previousCount) => previousCount + 2);
   }
 
   return (
@@ -14,9 +14,16 @@ export default function QuestionContainer({ searchTerm, setShow }) {
       <div
         className="questions-container"
       >
-        <QuestionRow searchTerm={searchTerm} count={count} />
+        <QuestionRow
+          searchTerm={searchTerm}
+          count={count}
+        />
       </div>
-      <AddQuestion setShow={setShow} count={count} setCount={incrementQuestionCount} />
+      <AddQuestion
+        setShow={setShow}
+        count={count}
+        setCount={incrementQuestionCount}
+      />
     </>
   );
 }

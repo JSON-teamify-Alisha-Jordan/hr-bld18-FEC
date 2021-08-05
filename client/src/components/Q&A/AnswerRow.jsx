@@ -37,7 +37,9 @@ export default function AnswerRow({ questionId }) {
           key={answer.answer_id}
         ><b>A: </b>{answer.body}
           <br />
-          <div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)}  |  <Report /></div>
+          {answer.answerer_name === 'Seller'
+            ? <div className="by-line">by <b>{answer.answerer_name}</b>, {answer.date.slice(0, 10)}  |  <Report helpfulness={answer.helpfulness} /></div>
+            : <div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)}  |  <Report helpfulness={answer.helpfulness} /></div>}
         </div>
       ))}
       {answers.length > 2

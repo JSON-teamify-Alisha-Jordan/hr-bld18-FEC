@@ -53,3 +53,23 @@
 .add-question {
   display: flex;
 }
+
+.question {
+  border-bottom: .1em solid rgb(110, 110, 110);
+  margin-bottom: 1.5em;
+}
+
+.question-text {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.helpful-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.helpful :hover{
+  color: rgba(87, 73, 219, 0.854);
+  cursor: pointer;
+}
