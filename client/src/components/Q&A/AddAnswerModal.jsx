@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
 
-export default function AddQModal() {
-  const { showAddQuestionModal, setShowAddQuestionModal } = useContext(ProductContext);
+export default function AddAnswerModal() {
+  const { showAddAnswerModal, setShowAddAnswerModal } = useContext(ProductContext);
+
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event);
@@ -12,19 +13,19 @@ export default function AddQModal() {
     <div
       className="modal-wrapper"
       style={{
-        transform: showAddQuestionModal ? 'translate(0, 40rem)' : 'translateY(-100vh)',
-        opacity: showAddQuestionModal ? '1' : '0',
-        zIndex: showAddQuestionModal ? '1' : '-1',
+        transform: showAddAnswerModal ? 'translate(0, 40rem)' : 'translateY(-100vh)',
+        opacity: showAddAnswerModal ? '1' : '0',
+        zIndex: showAddAnswerModal ? '1' : '-1',
         position: 'absolute',
         left: '25%',
         top: '25%',
       }}
     >
       <div className="modal-header">
-        <b><h2>Ask Your Question</h2></b>
-        <em><h3>[Product Name Here]</h3></em>
+        <b><h2>Add Your Answer</h2></b>
+        <em><h3>[Product Name Here, Question Name]</h3></em>
         <span
-          onClick={() => setShowAddQuestionModal(false)}
+          onClick={() => setShowAddAnswerModal(false)}
           className="close-modal-btn"
         ><b>X</b>
         </span>
@@ -54,18 +55,18 @@ export default function AddQModal() {
           </div>
           <textarea
             className="modal-input"
-            placeholder="What would you like to ask about this product?"
+            placeholder="What knowledge would you like to drop?"
           />
           <div className="modal-footer">
             <button
               className="btn-add"
               type="submit"
             >
-              <b>Add Question</b>
+              <b>Add Answer</b>
             </button>
             <button
               className="btn-close"
-              onClick={() => setShowAddQuestionModal(false)}
+              onClick={() => setShowAddAnswerModal(false)}
               type="button"
             >
               <b>Close</b>

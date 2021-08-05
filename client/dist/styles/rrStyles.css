@@ -47,15 +47,38 @@
   float: right;
 }
 
+.rr-rating-breakdown-container {
+  margin: .8rem 0;
+}
+
+.rr-rating-breakdown-container h3 {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.rr-rating-breakdown-container p {
+  font-style: italic;
+}
+
 .rr-recommendation-summary {
-  font-size: .8rem;
+  font-size: .9rem;
 }
 
 .rr-star-filter {
   font-size: .8rem;
-  margin-top: 1rem;
+  padding: .3rem .1rem;
+  margin: .3rem 0;
   display: flex;
   align-items: stretch;
+}
+
+.rr-star-filter-selected {
+  border: .1rem solid black;
+  background-color: rgb(219, 213, 213);
+}
+
+.rr-star-filter:hover {
+  background-color: rgb(219, 213, 213);
 }
 
 .rr-progress-bar {
@@ -102,8 +125,12 @@
   margin-top: 1.5rem;
 }
 
-.rr-factor-slider-label {
+.rr-factor-slider-labels {
   font-size: .8rem;
+}
+
+.rr-factor-slider-labels span:last-child {
+  float: right;
 }
 
 .rr-text-button {

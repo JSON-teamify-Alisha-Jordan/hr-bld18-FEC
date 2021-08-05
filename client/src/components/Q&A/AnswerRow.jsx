@@ -7,7 +7,7 @@ export default function AnswerRow({ questionId }) {
   const [count, setCount] = useState(2);
 
   function incrementAnswerCount() {
-    setCount(count + 2);
+    setCount((previousCount) => previousCount + 2);
   }
 
   const renderedAnswers = answers.slice(0, count);
@@ -36,7 +36,10 @@ export default function AnswerRow({ questionId }) {
           className="answer"
           key={answer.answer_id}
         ><b>A: </b>{answer.body}
-          <br /><div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)} | <Report /></div>
+          <br />
+          {answer.answerer_name === 'Seller'
+            ? <div className="by-line">by <b>{answer.answerer_name}</b>, {answer.date.slice(0, 10)}  |  <Report helpfulness={answer.helpfulness} /></div>
+            : <div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)}  |  <Report helpfulness={answer.helpfulness} /></div>}
         </div>
       ))}
       {answers.length > 2

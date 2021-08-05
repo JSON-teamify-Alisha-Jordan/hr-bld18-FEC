@@ -7,10 +7,11 @@
   height: 3em;
   width: 100%;
   padding: 1em;
+  font-size: 1em;
 }
 
 .questions-container {
-  height: 18.5em;
+  height: 20em;
   overflow-y: auto;
 }
 
@@ -21,6 +22,10 @@
 
 .load-text {
   margin-top: 20px;
+}
+
+.helpful {
+  color: rgb(110, 110, 110);
 }
 
 .answer {
@@ -34,13 +39,37 @@
 
 .open-modal-btn,
 .more-questions-btn {
-  background: rgba(9, 0, 89, 0.854);
-  color: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  color: rgb(110, 110, 110);
   height: 3em;
   width: 10em;
   font-size: 1em;
   margin: 1em;
-  border: none;
+  border: 1px solid rgb(110, 110, 110);
   outline: none;
+  cursor: pointer;
+}
+
+.add-question {
+  display: flex;
+}
+
+.question {
+  border-bottom: .1em solid rgb(110, 110, 110);
+  margin-bottom: 1.5em;
+}
+
+.question-text {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.helpful-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.helpful :hover{
+  color: rgba(87, 73, 219, 0.854);
   cursor: pointer;
 }

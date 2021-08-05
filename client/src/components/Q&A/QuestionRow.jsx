@@ -27,7 +27,10 @@ export default function QuestionRow({ searchTerm, count }) {
           className="question"
           key={question.question_id}
         >
-          <b>Q: {question.question_body}</b> <Helpful />
+          <div className="helpful-header">
+            <div className="question-text">Q: {question.question_body}</div>
+            <Helpful helpfulness={question.question_helpfulness} />
+          </div>
           <AnswerRow
             questionId={question.question_id}
           />
