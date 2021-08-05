@@ -3,7 +3,7 @@ import React from 'react';
 import Breakdown from './Breakdown.jsx';
 import ReviewsList from './ReviewsList.jsx';
 
-export default function RR() {
+export default function RatingsAndReviews() {
   return (
     <div className="rr-container">
       <h2 id="ratings_and_reviews" className="rr-header">Ratings & Reviews</h2>

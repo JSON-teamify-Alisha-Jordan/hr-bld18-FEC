@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function ReviewBody() {
+export default function ReviewBody({ review }) {
   return (
-    <div>
-      <h4>Review Title</h4>
-      <p>Review text will go here.</p>
+    <div className="review-body-container">
+      <h4>{review.summary}</h4>
+      <p>{review.body}</p>
     </div>
   );
 }

@@ -1,9 +1,12 @@
 import React from 'react';
 
-export default function ReviewFeedback() {
+export default function ReviewFeedback({ helpfulness }) {
   return (
     <div>
-      Helpful? Yes(10) | Report
+      Helpful?
+      <button className="rr-text-button" type="button">Yes ({helpfulness})</button>
+      |
+      <button className="rr-text-button" type="button">Report</button>
     </div>
   );
 }
