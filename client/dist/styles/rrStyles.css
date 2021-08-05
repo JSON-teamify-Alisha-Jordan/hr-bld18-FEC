@@ -53,9 +53,19 @@
 
 .rr-star-filter {
   font-size: .8rem;
-  margin-top: 1rem;
+  padding: .3rem .1rem;
+  margin: .3rem 0;
   display: flex;
   align-items: stretch;
+}
+
+.rr-star-filter-selected {
+  border: .1rem solid black;
+  background-color: rgb(219, 213, 213);
+}
+
+.rr-star-filter:hover {
+  background-color: rgb(219, 213, 213);
 }
 
 .rr-progress-bar {
