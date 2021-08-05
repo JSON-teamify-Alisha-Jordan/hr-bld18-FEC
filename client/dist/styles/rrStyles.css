@@ -102,8 +102,12 @@
   margin-top: 1.5rem;
 }
 
-.rr-factor-slider-label {
+.rr-factor-slider-labels {
   font-size: .8rem;
+}
+
+.rr-factor-slider-labels span:last-child {
+  float: right;
 }
 
 .rr-text-button {
