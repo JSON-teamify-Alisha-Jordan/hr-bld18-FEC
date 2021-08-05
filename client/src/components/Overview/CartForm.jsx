@@ -33,7 +33,6 @@ export default function CartForm({ currentStyle }) {
   }
 
   function handleAddToCart(event) {
-    // debugger;
     event.preventDefault();
     (validCart)
       ? axios.post('/cart', { sku_id: selectedSku }).then(setValidCart(null))
