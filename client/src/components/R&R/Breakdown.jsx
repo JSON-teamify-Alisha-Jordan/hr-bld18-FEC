@@ -29,17 +29,21 @@ const calculatePercentRecommended = (recommendedObj) => {
   return Math.round(percent);
 };
 
-export default function Breakdown() {
+export default function Breakdown({ filters, setFilters }) {
   const { reviewsMeta } = useContext(ProductContext);
   const numReviews = calculateNumReviews(reviewsMeta.ratings);
   const averageRating = calculateAverage(reviewsMeta.ratings);
   const percentRecommended = calculatePercentRecommended(reviewsMeta.recommended);
-
+  console.log(reviewsMeta);
   return (
     <div>
       <RatingSummary rating={averageRating} />
       <RecommendationSummary percent={percentRecommended} />
-      <RatingBreakdown ratings={{ ...reviewsMeta.ratings, numReviews }} />
+      <RatingBreakdown
+        ratings={{ ...reviewsMeta.ratings, numReviews }}
+        filters={filters}
+        setFilters={setFilters}
+      />
       <ProductBreakdown characteristics={reviewsMeta.characteristics} />
     </div>
   );

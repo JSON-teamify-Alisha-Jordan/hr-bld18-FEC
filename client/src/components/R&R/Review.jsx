@@ -8,7 +8,7 @@ export default function Review({ review }) {
     <div className="review-container">
       <ReviewTopRow review={review} />
       <ReviewBody review={review} />
-      <ReviewFeedback helpfulness={review.helpfulness} />
+      <ReviewFeedback helpfulness={review.helpfulness} id={review.review_id} />
     </div>
   );
 }
