@@ -4,6 +4,13 @@ import Report from './Report';
 
 export default function AnswerRow({ questionId }) {
   const [answers, setAnswers] = useState([]);
+  const [count, setCount] = useState(2);
+
+  function incrementAnswerCount() {
+    setCount(count + 2);
+  }
+
+  const renderedAnswers = answers.slice(0, count);
 
   function fetchAnswers() {
     axios
@@ -23,15 +30,17 @@ export default function AnswerRow({ questionId }) {
   return (
     <div
       className="answers-row"
-      style={{ border: '2px solid slateblue' }}
     >
-      {answers.map((answer) => (
-        <div key={answer.answer_id}><b>A:</b>{answer.body}
-          <br />by {answer.answerer_name}, {answer.date.slice(0, 10)} | <Report />
+      {renderedAnswers.map((answer) => (
+        <div
+          className="answer"
+          key={answer.answer_id}
+        ><b>A: </b>{answer.body}
+          <br /><div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)} | <Report /></div>
         </div>
       ))}
       {answers.length > 2
-        ? <button className="load-answers" type="button">Load More Answers</button>
+        ? <span className="load-answers" onClick={incrementAnswerCount}><b className="load-text">Load More Answers</b></span>
         : <></>} <br />
     </div>
   );

@@ -1,19 +1,46 @@
 .main-container,
-.search-bar,
-.question-container,
-.question-row,
-.answers-row,
-.add-question {
+.question-row {
   margin: 1.25em;
 }
 
 .search-input {
   height: 3em;
-  width: 55vw;
+  width: 100%;
+  padding: 1em;
 }
 
-.question-row {
-  background: rgb(194, 194, 194);
-  /* display: grid;
-  grid-template-columns: 70% 30%; */
+.questions-container {
+  height: 18.5em;
+  overflow-y: auto;
+}
+
+.load-answers :hover {
+  color: rgba(87, 73, 219, 0.854);
+  cursor: pointer;
+}
+
+.load-text {
+  margin-top: 20px;
+}
+
+.answer {
+  margin: 1em;
+}
+
+.by-line {
+  margin-top: .5em;
+  color: rgb(110, 110, 110);
+}
+
+.open-modal-btn,
+.more-questions-btn {
+  background: rgba(9, 0, 89, 0.854);
+  color: rgb(255, 255, 255);
+  height: 3em;
+  width: 10em;
+  font-size: 1em;
+  margin: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }

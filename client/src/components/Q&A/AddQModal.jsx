@@ -10,7 +10,7 @@ export default function AddQModal({ show, setShow }) {
     <div
       className="modal-wrapper"
       style={{
-        transform: show ? 'translate(0, 60em)' : 'translateY(-100vh)',
+        transform: show ? 'translate(0, 50em)' : 'translateY(-100vh)',
         opacity: show ? '1' : '0',
         zIndex: show ? '1' : '-1',
         position: 'absolute',
