@@ -10,7 +10,6 @@ export default function App() {
   const [productID, setProductID] = useState('');
   const [product, setProduct] = useState({});
   const [styles, setStyles] = useState([]);
-  const [reviews, setReviews] = useState(null);
   const [reviewsMeta, setReviewsMeta] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [show, setShow] = useState(false);
@@ -35,19 +34,12 @@ export default function App() {
       .then(setStyles);
   }
 
-  function fetchReviews() {
+  function fetchReviewsMeta() {
     axios.get('/reviews/meta', { params: { product_id: productID } })
       .then((result) => result.data)
       .then((data) => {
         setReviewsMeta(data);
       });
-    axios.get('/reviews', {
-      params: {
-        product_id: productID, sort: 'relevant', page: 1, count: 500,
-      },
-    })
-      .then((result) => result.data.results)
-      .then(setReviews);
   }
 
   function fetchQuestions() {
@@ -64,13 +56,13 @@ export default function App() {
     if (productID) {
       fetchProduct();
       fetchStyles();
-      fetchReviews();
+      fetchReviewsMeta();
       fetchQuestions();
     }
   }, [productID]);
 
   // if our states are not populated
-  if (!productID || !styles.length || !reviews || !Object.keys(product).length
+  if (!productID || !styles.length || !Object.keys(product).length
     || !questions.length || !reviewsMeta) {
     return (
       <div>Loading...</div>
@@ -81,12 +73,10 @@ export default function App() {
       {show ? <div className="modal-backdrop" onClick={() => setShow(false)} /> : null}
       {showImageModal ? <div className="modal-backdrop" onClick={() => setShowImageModal(false)} /> : null}
       <ProductContext.Provider value={{
-        fetchReviews,
         fetchStyles,
         fetchQuestions,
         setShowImageModal,
         showImageModal,
-        reviews,
         questions,
         reviewsMeta,
         productID,
