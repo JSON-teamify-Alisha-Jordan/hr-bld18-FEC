@@ -11,10 +11,7 @@ export default function Helpful({ helpfulness }) {
     <span
       className="helpful"
     >Helpful?
-      <u
-        onClick={handleCount}
-      > Yes
-      </u>
+      <u onClick={handleCount}> Yes </u>
       ({helpfulness}) | <span onClick={() => setShowAddAnswerModal(true)}><u>Add Answer</u></span>
     </span>
   );
