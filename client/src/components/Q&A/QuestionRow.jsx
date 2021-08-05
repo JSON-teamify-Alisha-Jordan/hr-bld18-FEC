@@ -18,7 +18,6 @@ export default function QuestionRow({ searchTerm, count }) {
   //   return answerer_name;
   // });
 
-  console.log(questions);
   return (
     <div
       className="question-row"
