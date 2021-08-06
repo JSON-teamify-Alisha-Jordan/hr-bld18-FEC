@@ -11,7 +11,7 @@ export default function InfoContainer({ currentStyle, changeSelectedStyle }) {
   const totalReviews = +(reviewsMeta.recommended.false) + +(reviewsMeta.recommended.true);
 
   return (
-    <div className="info-container">
+    <div data-testid="starRating" className="info-container">
       {totalReviews === 0
         ? null
         : (
