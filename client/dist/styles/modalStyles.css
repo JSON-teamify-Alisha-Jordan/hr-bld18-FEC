@@ -45,7 +45,6 @@ body {
 .modal-body p {
   font-size: 1em;
   background: white;
-  color: cadetblue;
   padding: 1em;
   margin: 1em 0 2em 0;
 }
@@ -89,6 +88,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   color: rgba(62, 62, 62, 0.9);
+}
+
+.modal-nickname-email input {
+  height: 2.5em;
+  width: 16em;
 }
 
 .modal-top-info {

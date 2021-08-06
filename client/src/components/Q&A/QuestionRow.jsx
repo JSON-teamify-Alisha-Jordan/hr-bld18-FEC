@@ -12,9 +12,6 @@ export default function QuestionRow({ searchTerm, count }) {
   );
 
   // const searchable = alldata.map((data) => {
-  //   const { answers } = question;
-  //   const { answerer_name } = answers;
-  //   return answerer_name;
   // });
 
   return (

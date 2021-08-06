@@ -5,9 +5,16 @@ import Report from './Report';
 export default function AnswerRow({ questionId }) {
   const [answers, setAnswers] = useState([]);
   const [count, setCount] = useState(2);
+  const [expanded, setExpanded] = useState(false);
 
-  function incrementAnswerCount() {
-    setCount((previousCount) => previousCount + 2);
+  function toggleExpandAnswers() {
+    setExpanded((prev) => !prev);
+    setCount((prev) => {
+      if (prev === 2) {
+        return answers.length;
+      }
+      return 2;
+    });
   }
 
   const renderedAnswers = answers.slice(0, count);
@@ -36,8 +43,9 @@ export default function AnswerRow({ questionId }) {
         </div>
       ))}
       {answers.length > 2
-        ? <span className="load-answers" onClick={incrementAnswerCount}><b>Load More Answers</b></span>
-        : <></>} <br />
+        ? <span className="load-answers" onClick={toggleExpandAnswers}><b>{!expanded ? 'Load More Answers' : 'Collapse Answers'}</b></span>
+        : <></>}
+      <br />
     </div>
   );
 }

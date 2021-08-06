@@ -6,6 +6,7 @@
 .questions-container {
   max-height: 45em;
   overflow-y: auto;
+  margin: -1.25em;
 }
 
 .search-input {
@@ -47,6 +48,7 @@
 
 .by-line {
   margin-top: .5em;
+  margin-left: 1.6em;
   color: rgb(110, 110, 110);
 }
 
@@ -56,7 +58,9 @@
   color: rgba(62, 62, 62, 0.9);
   font-weight: bold;
   font-size: 1em;
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
   border: 1px solid rgb(110, 110, 110);
   outline: none;
   cursor: pointer;
@@ -74,6 +78,7 @@
 
 .add-question {
   display: flex;
+  margin-top: 1em;
 }
 
 .question {
