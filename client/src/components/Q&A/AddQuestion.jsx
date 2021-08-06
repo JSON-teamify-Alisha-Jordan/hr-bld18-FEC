@@ -3,10 +3,9 @@ import ProductContext from '../../context';
 
 export default function AddQuestion({ setCount }) {
   const { setShowAddQuestionModal } = useContext(ProductContext);
+
   return (
-    <div
-      className="add-question"
-    >
+    <div className="add-question">
       <br />
       <button
         className="more-questions-btn"
@@ -20,7 +19,7 @@ export default function AddQuestion({ setCount }) {
         onClick={() => setShowAddQuestionModal(true)}
         type="button"
       >
-        Add A Question ✚
+        Add A Question ＋
       </button>
     </div>
   );

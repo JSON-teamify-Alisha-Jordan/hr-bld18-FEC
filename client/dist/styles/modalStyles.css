@@ -18,6 +18,7 @@ body {
 
 .modal-header {
   background: rgba(9, 0, 89, 0.5);
+  color: rgb(0, 0, 0);
   padding: 1em;
   display: flex;
   align-items: center;
@@ -38,7 +39,7 @@ body {
 }
 
 .modal-body h4 {
-  color: rgba(87, 73, 219, 0.854);
+  color: rgba(62, 62, 62, 0.9);
 }
 
 .modal-body p {
@@ -60,7 +61,7 @@ body {
   font-size: 1em;
   padding: 0.5em 1.8em;
   background: white;
-  color: black;
+  color: rgba(62, 62, 62, 0.9);
   border: none;
   outline: 1px solid black;
   cursor: pointer;
@@ -70,6 +71,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: .5em;
 }
 
 .modal-backdrop {
@@ -86,10 +88,17 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: rgba(62, 62, 62, 0.9);
+}
+
+.modal-top-info {
+  margin-bottom: .5em;
 }
 
 .modal-info {
   font-size: .75em;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .modal-body textarea {

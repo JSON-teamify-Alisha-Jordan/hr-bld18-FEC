@@ -3,16 +3,22 @@
   margin: 1.25em;
 }
 
-.search-input {
-  height: 3em;
-  width: 100%;
-  padding: 1em;
-  font-size: 1em;
+.questions-container {
+  max-height: 45em;
+  overflow-y: auto;
 }
 
-.questions-container {
-  height: 20em;
-  overflow-y: auto;
+.search-input {
+  height: 3.5em;
+  width: 100%;
+  padding: .8em;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+::placeholder {
+  font-weight: bold;
+  color: rgba(62, 62, 62, 0.9);
 }
 
 .load-answers :hover {
@@ -20,8 +26,9 @@
   cursor: pointer;
 }
 
-.load-text {
+.load-answers {
   margin-top: 20px;
+  color: rgba(62, 62, 62, 0.9);
 }
 
 .helpful {
@@ -29,7 +36,13 @@
 }
 
 .answer {
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: rgba(62, 62, 62, 0.9);
+}
+
+.answer b {
+  font-size: 1.2em;
 }
 
 .by-line {
@@ -40,14 +53,23 @@
 .open-modal-btn,
 .more-questions-btn {
   background: rgb(255, 255, 255);
-  color: rgb(53, 53, 53);
-  height: 3em;
-  width: 10em;
+  color: rgba(62, 62, 62, 0.9);
+  font-weight: bold;
   font-size: 1em;
   margin: 1em;
   border: 1px solid rgb(110, 110, 110);
   outline: none;
   cursor: pointer;
+}
+
+.open-modal-btn {
+  height: 3em;
+  width: 10em;
+}
+
+.more-questions-btn {
+  height: 3em;
+  width: 14em;
 }
 
 .add-question {
@@ -61,8 +83,8 @@
 
 .question-text {
   font-weight: bold;
-  font-size: 1.1em;
-  color: rgb(85, 85, 85);
+  font-size: 1.2em;
+  color: rgba(62, 62, 62, 0.9);
 }
 
 .helpful-header {
@@ -75,7 +97,7 @@
   cursor: pointer;
 }
 
-.QA-header {
+.qa-header {
   color: rgb(110, 110, 110);
   font-size: 1em;
   font-weight: lighter;

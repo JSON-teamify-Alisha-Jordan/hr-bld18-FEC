@@ -11,17 +11,14 @@ export default function QuestionRow({ searchTerm, count }) {
     (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
   );
 
-  // const searchable = questions.map((question) => {
+  // const searchable = alldata.map((data) => {
   //   const { answers } = question;
-  //   debugger;
   //   const { answerer_name } = answers;
   //   return answerer_name;
   // });
 
   return (
-    <div
-      className="question-row"
-    >
+    <div className="question-row">
       {renderedQuestions.map((question) => (
         <div
           className="question"
@@ -31,9 +28,7 @@ export default function QuestionRow({ searchTerm, count }) {
             <div className="question-text">Q: {question.question_body}</div>
             <Helpful helpfulness={question.question_helpfulness} />
           </div>
-          <AnswerRow
-            questionId={question.question_id}
-          />
+          <AnswerRow questionId={question.question_id} />
           <br />
         </div>
       ))}

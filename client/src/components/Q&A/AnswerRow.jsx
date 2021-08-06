@@ -23,9 +23,7 @@ export default function AnswerRow({ questionId }) {
   }, []);
 
   return (
-    <div
-      className="answers-row"
-    >
+    <div className="answers-row">
       {renderedAnswers.map((answer) => (
         <div
           className="answer"
@@ -38,7 +36,7 @@ export default function AnswerRow({ questionId }) {
         </div>
       ))}
       {answers.length > 2
-        ? <span className="load-answers" onClick={incrementAnswerCount}><b className="load-text">Load More Answers</b></span>
+        ? <span className="load-answers" onClick={incrementAnswerCount}><b>Load More Answers</b></span>
         : <></>} <br />
     </div>
   );

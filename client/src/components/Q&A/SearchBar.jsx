@@ -11,9 +11,7 @@ export default function SearchBar({ setSearchTerm }) {
   }
 
   return (
-    <div
-      className="search-bar"
-    >
+    <div className="search-bar">
       <form>
         <b><input
           className="search-input"
