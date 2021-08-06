@@ -3,6 +3,7 @@ import ProductContext from '../../context';
 
 export default function AddQModal() {
   const { showAddQuestionModal, setShowAddQuestionModal } = useContext(ProductContext);
+
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event);
@@ -12,7 +13,7 @@ export default function AddQModal() {
     <div
       className="modal-wrapper"
       style={{
-        transform: showAddQuestionModal ? 'translate(0, 40rem)' : 'translateY(-100vh)',
+        transform: showAddQuestionModal ? 'translate(0, 45rem)' : 'translateY(-100vh)',
         opacity: showAddQuestionModal ? '1' : '0',
         zIndex: showAddQuestionModal ? '1' : '-1',
         position: 'absolute',

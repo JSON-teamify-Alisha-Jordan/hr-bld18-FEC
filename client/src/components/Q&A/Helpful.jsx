@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import ProductContext from '../../context';
-// need the question helpfulness
 
 export default function Helpful({ helpfulness }) {
   const { setShowAddAnswerModal } = useContext(ProductContext);

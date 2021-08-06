@@ -13,7 +13,7 @@ export default function AddAnswerModal() {
     <div
       className="modal-wrapper"
       style={{
-        transform: showAddAnswerModal ? 'translate(0, 40rem)' : 'translateY(-100vh)',
+        transform: showAddAnswerModal ? 'translate(0, 45rem)' : 'translateY(-100vh)',
         opacity: showAddAnswerModal ? '1' : '0',
         zIndex: showAddAnswerModal ? '1' : '-1',
         position: 'absolute',
