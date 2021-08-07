@@ -11,6 +11,7 @@ body {
 
 .page-header {
   height: 3em;
+  color: rgb(62, 62, 62);
   background-color: rgba(9, 0, 89, 0.5);
   padding: 1em 0 0 1em;
 }
@@ -136,8 +137,15 @@ body {
 
 .overview-modal-image {
   max-height: 90vh;
-  width: auto;
-  position: absolute;
+  width: 100%;
+  /* position: absolute; */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overview-modal-image:hover {
+  background-size: 250%;
 }
 
 /*/////////////INFO CONTAINER STYLING/////////////*/
@@ -223,7 +231,6 @@ body {
 .style-select-thumb {
   height: 5em;
   width: 5em;
-  /* border: 0.15em solid rgba(0, 0, 0, 0.66); */
 }
 
 .style-select-thumb-transparent {
@@ -241,6 +248,7 @@ body {
   display: grid;
   grid-template-columns: 70% 30%;
   grid-template-rows: 100%;
+  color: rgba(62, 62, 62, 0.9);
 }
 
 .overview-features-list {
