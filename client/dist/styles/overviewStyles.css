@@ -252,10 +252,12 @@ body {
 .overview-features-list,
 .overview-product-description {
   font-size: 1.25em;
+  color: rgba(62, 62, 62, 0.9);
 }
 
 .overview-slogan {
   margin-bottom: 1em;
+  color: rgba(62, 62, 62, 0.9);
 }
 
 /*/////////////CART STYLING/////////////*/
