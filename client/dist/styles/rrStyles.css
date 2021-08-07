@@ -152,9 +152,12 @@
 }
 
 .rr-modal {
-  height: 50vh;
+  max-height: 80vh;
   z-index: 1;
   background: cadetblue;
+  padding: 3rem;
+  overflow: auto;
+  position: relative;
 }
 
 #rr-modal-backdrop {
@@ -171,4 +174,16 @@
 
 .star-input:hover {
   text-shadow: 0 0 .5rem #000;
+}
+
+.rr-close-modal-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+}
+
+.rr-close-modal-button:hover {
+  cursor: pointer;
+  color: gray;
 }

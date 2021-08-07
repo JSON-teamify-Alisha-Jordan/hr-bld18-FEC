@@ -9,7 +9,7 @@ export default function Modal({ show, close, children }) {
   return ReactDOM.createPortal(
     <div id="rr-modal-backdrop" onClick={close}>
       <div className="rr-modal" onClick={(e) => { e.stopPropagation(); }}>
-        <button onClick={close} type="button">x</button>
+        <i onClick={close} className="far fa-window-close rr-close-modal-button" />
         {children}
       </div>
     </div>,

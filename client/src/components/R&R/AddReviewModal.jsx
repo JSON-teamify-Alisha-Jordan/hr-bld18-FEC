@@ -5,10 +5,12 @@ import StarsInput from './StarsInput';
 import RadioRow from './RadioRow';
 
 export default function AddReviewModal() {
-  const { product, showAddReviewModal, setShowAddReviewModal } = useContext(ProductContext);
+  const { product, reviewsMeta, showAddReviewModal, setShowAddReviewModal } = useContext(ProductContext);
 
   const [rating, setRating] = useState(0);
   const [recommend, setRecommend] = useState('');
+  const characteristicNames = Object.keys(reviewsMeta.characteristics);
+  const [characteristics, setCharacteristics] = useState({});
 
   const handleRecommendChange = (e) => {
     setRecommend(e.target.value);
@@ -26,11 +28,11 @@ export default function AddReviewModal() {
         <fieldset>
           <p>Do you recommend this product?</p>
             <label>
-              yes
+              Yes
               <input type="radio" name="recommend" value="yes" checked={recommend === 'yes'} onChange={handleRecommendChange} />
             </label>
             <label>
-              no
+              No
               <input type="radio" name="recommend" value="no" checked={recommend === 'no'} onChange={handleRecommendChange} />
             </label>
         </fieldset>
@@ -38,7 +40,10 @@ export default function AddReviewModal() {
 
         <fieldset>
           <p>Characteristics</p>
-          <RadioRow characteristic={'Size'}/>
+          {characteristicNames.map((characteristic) =>
+            <RadioRow characteristic={characteristic} key={characteristic} />
+          )}
+
         </fieldset>
 
 
