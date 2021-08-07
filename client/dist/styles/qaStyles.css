@@ -14,10 +14,10 @@
   width: 100%;
   padding: .8em;
   font-size: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
-::placeholder {
+.search-input::placeholder {
   font-weight: bold;
   color: rgba(62, 62, 62, 0.9);
 }

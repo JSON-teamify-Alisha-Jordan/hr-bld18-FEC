@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import QuestionRow from './QuestionRow';
 import AddQuestion from './AddQuestion';
+import ProductContext from '../../context';
 
 export default function QuestionContainer({ searchTerm }) {
+  const { questions } = useContext(ProductContext);
   const [count, setCount] = useState(2);
-
-  function incrementQuestionCount() {
-    setCount((previousCount) => previousCount + 2);
-  }
 
   return (
     <>
@@ -19,7 +17,8 @@ export default function QuestionContainer({ searchTerm }) {
       </div>
       <AddQuestion
         count={count}
-        setCount={incrementQuestionCount}
+        setCount={setCount}
+        questions={questions}
       />
     </>
   );

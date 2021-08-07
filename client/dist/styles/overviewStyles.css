@@ -13,6 +13,7 @@ body {
   height: 3em;
   background-color: rgba(9, 0, 89, 0.5);
   padding: 1em 0 0 1em;
+  font-family: 'Abril Fatface', cursive;
 }
 
 ::-webkit-scrollbar {

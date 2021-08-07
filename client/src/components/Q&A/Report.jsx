@@ -6,9 +6,8 @@ export default function Report({ helpfulness }) {
   }
 
   return (
-    <span
-      className="helpful"
-    >Helpful? <u onClick={handleCount}>Yes</u>({helpfulness}) | <u>Report</u>
+    <span className="helpful">Helpful?
+      <u onClick={handleCount}>Yes</u>({helpfulness}) | <u>Report</u>
     </span>
   );
 }

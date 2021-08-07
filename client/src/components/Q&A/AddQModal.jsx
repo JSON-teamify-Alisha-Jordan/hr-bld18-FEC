@@ -1,29 +1,43 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import ProductContext from '../../context';
 
 export default function AddQModal() {
-  const { showAddQuestionModal, setShowAddQuestionModal } = useContext(ProductContext);
+  const {
+    showAddQuestionModal,
+    setShowAddQuestionModal,
+    product,
+    productID,
+  } = useContext(ProductContext);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
+
+    const newQuestion = {
+      product_id: productID,
+      name: event.target[0].value,
+      email: event.target[1].value,
+      body: event.target[2].value,
+    };
+    axios
+      .post('/qa/questions', newQuestion)
+      .then(console.log)
+      .catch((err) => console.log(err));
   }
 
   return (
     <div
       className="modal-wrapper"
       style={{
-        transform: showAddQuestionModal ? 'translate(0, 45rem)' : 'translateY(-100vh)',
+        transform: showAddQuestionModal ? 'translate(0, 20vh)' : 'translateY(-100vh)',
         opacity: showAddQuestionModal ? '1' : '0',
         zIndex: showAddQuestionModal ? '1' : '-1',
         position: 'absolute',
-        left: '25%',
-        top: '25%',
       }}
     >
       <div className="modal-header">
         <b><h2>Ask Your Question</h2></b>
-        <em><h3>[Product Name Here]</h3></em>
+        <em><h3>[{product.name}]</h3></em>
         <span
           onClick={() => setShowAddQuestionModal(false)}
           className="close-modal-btn"
