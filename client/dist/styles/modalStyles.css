@@ -79,6 +79,7 @@ body {
   width: 100vw;
   position: fixed;
   transition: all 1.3s;
+  left: 0;
 }
 
 .modal-nickname-email,
