@@ -15,15 +15,13 @@ export default function ImageExpandModal({
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   function handleMouseMove(event) {
-    console.log(event.target);
-    console.log(imageRef)
-    setMousePosition({ left: event.pageX, top: event.pageY });
-    const bgPosX = ((mousePosition.left / dimensions.width) * 100);
-    const bgPosY = ((mousePosition.top / dimensions.height) * 100);
+    setMousePosition({ left: event.clientX, top: event.clientY });
+    const bgPosX = (((mousePosition.left - 316) / dimensions.width) * 100);
+    const bgPosY = (((mousePosition.top - 84) / dimensions.height) * 100);
     imageRef.current.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
   }
 
-  function handleMouseLeave(event) {
+  function handleMouseLeave() {
     imageRef.current.style.backgroundPosition = 'center';
   }
 
@@ -53,7 +51,7 @@ export default function ImageExpandModal({
           </button>
         </div>
         <div className="modal-image-container">
-          <div ref={imageRef} onMouseMove={(event) => handleMouseMove(event)} onMouseLeave={(event) => handleMouseLeave(event)} className="overview-modal-image" style={{ backgroundImage: `url(${currentPhoto})` }} />
+          <div ref={imageRef} onMouseMove={(event) => handleMouseMove(event)} onMouseLeave={handleMouseLeave} className="overview-modal-image" style={{ backgroundImage: `url(${currentPhoto})` }} />
           <div className="arrow-container-expanded">
             {currentPhotoIndex === 0 ? <div />
               : <div><i onClick={previousPhoto} className="fas image-arrow-expanded fa-chevron-left" /></div>}
