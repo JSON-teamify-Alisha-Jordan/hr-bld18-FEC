@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import Characteristics from './Characteristics';
+import characteristicsText from './characteristicsText';
 
 function RadioButton({ value, characteristic }) {
   return (
@@ -12,9 +12,9 @@ function RadioButton({ value, characteristic }) {
   );
 }
 
-export default function RadioRow({ characteristic }) {
+export default function RadioRow({ characteristic, chars, setChars }) {
   const radioButtons = [];
-  const mapNumToOptionText = Characteristics[characteristic];
+  const mapNumToOptionText = characteristicsText[characteristic];
 
   for (let i = 5; i >= 1; i--) {
     radioButtons.push(<RadioButton

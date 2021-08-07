@@ -10,7 +10,7 @@ export default function AddReviewModal() {
   const [rating, setRating] = useState(0);
   const [recommend, setRecommend] = useState('');
   const characteristicNames = Object.keys(reviewsMeta.characteristics);
-  const [characteristics, setCharacteristics] = useState({});
+  const [chars, setChars] = useState({});
 
   const handleRecommendChange = (e) => {
     setRecommend(e.target.value);
@@ -36,17 +36,17 @@ export default function AddReviewModal() {
               <input type="radio" name="recommend" value="no" checked={recommend === 'no'} onChange={handleRecommendChange} />
             </label>
         </fieldset>
-
-
         <fieldset>
           <p>Characteristics</p>
-          {characteristicNames.map((characteristic) =>
-            <RadioRow characteristic={characteristic} key={characteristic} />
-          )}
-
+          {characteristicNames.map((characteristic) => (
+            <RadioRow
+              characteristic={characteristic}
+              chars={chars}
+              setChars={setChars}
+              key={characteristic}
+            />
+          ))}
         </fieldset>
-
-
         <input type="text" placeholder="Insert your review here..." />
       </form>
     </Modal>
