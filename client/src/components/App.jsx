@@ -19,7 +19,7 @@ export default function App() {
   function fetchProductID() {
     axios.get('/products')
       .then((result) => result.data)
-      .then((products) => products[4].id)
+      .then((products) => products[0].id)
       .then(setProductID);
   }
 
