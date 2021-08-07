@@ -6,6 +6,13 @@ const API_KEY = require('../config');
 
 const port = 3000;
 const app = express();
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Methods', '*');
+  next();
+});
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 

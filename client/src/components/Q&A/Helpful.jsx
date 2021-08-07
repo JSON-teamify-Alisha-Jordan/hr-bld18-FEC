@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import ProductContext from '../../context';
 
-export default function Helpful() {
-  const [count, setCount] = useState(Math.floor(Math.random() * 5));
-
+export default function Helpful({ helpfulness }) {
+  const { setShowAddAnswerModal } = useContext(ProductContext);
   function handleCount() {
-    setCount(() => count + 1);
   }
 
   return (
     <span
       className="helpful"
-    >Helpful? <u onClick={handleCount}>Yes</u>({count}) | <u>Add Answer</u>
+    >Helpful?
+      <u onClick={handleCount}> Yes </u>
+      ({helpfulness}) | <span onClick={() => setShowAddAnswerModal(true)}><u>Add Answer</u></span>
     </span>
   );
 }

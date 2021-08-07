@@ -5,43 +5,47 @@ import Report from './Report';
 export default function AnswerRow({ questionId }) {
   const [answers, setAnswers] = useState([]);
   const [count, setCount] = useState(2);
+  const [expanded, setExpanded] = useState(false);
 
-  function incrementAnswerCount() {
-    setCount(count + 2);
+  function toggleExpandAnswers() {
+    setExpanded((prev) => !prev);
+    setCount((prev) => {
+      if (prev === 2) {
+        return answers.length;
+      }
+      return 2;
+    });
   }
 
   const renderedAnswers = answers.slice(0, count);
 
-  function fetchAnswers() {
+  useEffect(() => {
+    let isMounted = true;
     axios
       .get(`/qa/questions/${questionId}/answers`)
       .then((answer) => {
-        setAnswers(answer.data.results);
-      })
-      .catch((err) => {
-        console.error(err);
+        if (isMounted) setAnswers(answer.data.results);
       });
-  }
-
-  useEffect(() => {
-    fetchAnswers();
+    return () => { isMounted = false; };
   }, []);
 
   return (
-    <div
-      className="answers-row"
-    >
+    <div className="answers-row">
       {renderedAnswers.map((answer) => (
         <div
           className="answer"
           key={answer.answer_id}
         ><b>A: </b>{answer.body}
-          <br /><div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)} | <Report /></div>
+          <br />
+          {answer.answerer_name === 'Seller'
+            ? <div className="by-line">by <b>{answer.answerer_name}</b>, {answer.date.slice(0, 10)}  |  <Report helpfulness={answer.helpfulness} /></div>
+            : <div className="by-line">by {answer.answerer_name}, {answer.date.slice(0, 10)}  |  <Report helpfulness={answer.helpfulness} /></div>}
         </div>
       ))}
       {answers.length > 2
-        ? <span className="load-answers" onClick={incrementAnswerCount}><b className="load-text">Load More Answers</b></span>
-        : <></>} <br />
+        ? <span className="load-answers" onClick={toggleExpandAnswers}><b>{!expanded ? 'Load More Answers' : 'Collapse Answers'}</b></span>
+        : <></>}
+      <br />
     </div>
   );
 }

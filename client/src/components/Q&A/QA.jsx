@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import QuestionContainer from './QuestionContainer';
 import AddQModal from './AddQModal';
+import AddAnswerModal from './AddAnswerModal';
 
-export default function QA({ show, setShow }) {
+export default function QA() {
   const [searchTerm, setSearchTerm] = useState('');
+
   return (
-    <div
-      className="main-container"
-    >
-      <h2>Questions & Answers</h2>
-      <AddQModal show={show} setShow={setShow} />
+    <div className="main-container">
+      <h2 className="qa-header">QUESTIONS & ANSWERS</h2>
+      <AddQModal />
+      <AddAnswerModal />
       <SearchBar setSearchTerm={setSearchTerm} />
-      <QuestionContainer searchTerm={searchTerm} setShow={setShow} />
+      <QuestionContainer searchTerm={searchTerm} />
     </div>
   );
 }

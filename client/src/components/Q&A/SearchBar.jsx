@@ -5,21 +5,19 @@ export default function SearchBar({ setSearchTerm }) {
     const search = event.target.value;
     if (search.length >= 3) {
       setSearchTerm(search);
-    } else {
-      setSearchTerm('');
     }
+    setSearchTerm('');
   }
 
   return (
-    <div
-      className="search-bar"
-    >
+    <div className="search-bar">
       <form>
-        <input
+        <b><input
           className="search-input"
-          placeholder="Have a question? Search for answers…"
+          placeholder="HAVE A QUESTION? SEARCH FOR ANSWERS…"
           onChange={handleSearch}
         />
+        </b>
       </form>
     </div>
   );

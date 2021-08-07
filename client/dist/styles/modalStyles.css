@@ -9,7 +9,7 @@ body {
 }
 
 .modal-wrapper {
-  background: cadetblue;
+  background: white;
   width: 80%;
   max-width: 800px;
   margin: 4em auto;
@@ -17,8 +17,8 @@ body {
 }
 
 .modal-header {
-  background: darkslategray;
-  color: aquamarine;
+  background: rgba(9, 0, 89, 0.5);
+  color: rgb(0, 0, 0);
   padding: 1em;
   display: flex;
   align-items: center;
@@ -39,13 +39,12 @@ body {
 }
 
 .modal-body h4 {
-  color: rgba(87, 73, 219, 0.854);
+  color: rgba(62, 62, 62, 0.9);
 }
 
 .modal-body p {
   font-size: 1em;
   background: white;
-  color: cadetblue;
   padding: 1em;
   margin: 1em 0 2em 0;
 }
@@ -53,16 +52,17 @@ body {
 .modal-body input {
   width: 12em;
   height: 2.25em;
+  padding: 0.5em;
 }
 
 .modal-footer button {
   display: block;
   font-size: 1em;
   padding: 0.5em 1.8em;
-  background: rgba(9, 0, 89, 0.854);
-  color: white;
+  background: white;
+  color: rgba(62, 62, 62, 0.9);
   border: none;
-  outline: none;
+  outline: 1px solid black;
   cursor: pointer;
 }
 
@@ -70,6 +70,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: .5em;
 }
 
 .modal-backdrop {
@@ -87,14 +88,30 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: rgba(62, 62, 62, 0.9);
+}
+
+.modal-nickname-email input {
+  height: 2.5em;
+  width: 16em;
+}
+
+.modal-top-info {
+  margin-bottom: .5em;
 }
 
 .modal-info {
   font-size: .75em;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 
 .modal-body textarea {
   resize: none;
   height: 13em;
   width: 100%;
+}
+
+.modal-input {
+  padding: 0.5em;
 }
