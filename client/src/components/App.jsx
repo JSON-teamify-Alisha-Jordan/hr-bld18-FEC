@@ -14,6 +14,8 @@ export default function App() {
   const [questions, setQuestions] = useState([]);
   const [show, setShow] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
+  // TEMPORARILY initialized to true
+  const [showAddReviewModal, setShowAddReviewModal] = useState(true);
 
   function fetchProductID() {
     axios.get('/products')
@@ -77,6 +79,8 @@ export default function App() {
         fetchQuestions,
         setShowImageModal,
         showImageModal,
+        showAddReviewModal,
+        setShowAddReviewModal,
         questions,
         reviewsMeta,
         productID,
