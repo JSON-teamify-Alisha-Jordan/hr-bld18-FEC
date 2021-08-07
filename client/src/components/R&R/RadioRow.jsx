@@ -2,12 +2,29 @@
 import React from 'react';
 import characteristicsText from './characteristicsText';
 
-function RadioButton({ value, characteristic }) {
+function RadioButton({ rating, characteristic, chars, setChars }) {
+  const mapNumToOptionText = characteristicsText[characteristic];
+  const text = mapNumToOptionText[rating];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setChars((prevChars) => ({
+      ...prevChars,
+      [name]: value,
+    }));
+  };
+
   return (
     <div>
-      <input type="radio" name="recommend" value={value} id={`${characteristic}-${value}`} />
-      {/* checked={} onChange={} */}
-      <label htmlFor={`${characteristic}-${value}`}>{value}</label>
+      <input
+        type="radio"
+        name={characteristic}
+        value={rating}
+        id={`${characteristic}-${rating}`}
+        checked={chars[characteristic] === String(rating)}
+        onChange={handleChange}
+      />
+      <label htmlFor={`${characteristic}-${rating}`}>{text}</label>
     </div>
   );
 }
@@ -19,8 +36,10 @@ export default function RadioRow({ characteristic, chars, setChars }) {
   for (let i = 5; i >= 1; i--) {
     radioButtons.push(<RadioButton
       characteristic={characteristic}
-      value={mapNumToOptionText[i]}
+      rating={i}
       key={mapNumToOptionText[i]}
+      chars={chars}
+      setChars={setChars}
     />);
   }
 

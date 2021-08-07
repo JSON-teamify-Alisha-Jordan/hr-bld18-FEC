@@ -13,17 +13,31 @@ export default function AddReviewModal() {
   } = useContext(ProductContext);
 
   const [rating, setRating] = useState(0);
-  const [recommend, setRecommend] = useState('');
   const characteristicNames = Object.keys(reviewsMeta.characteristics);
   const [chars, setChars] = useState({});
+  const [inputs, setInputs] = useState({});
 
-  const handleRecommendChange = (e) => {
-    setRecommend(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log('rating:', rating);
+    console.log('inputs: ', inputs);
+    console.log('chars: ', chars);
+
+    setShowAddReviewModal(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      [name]: value,
+    }));
   };
 
   return (
     <Modal show={showAddReviewModal} close={() => { setShowAddReviewModal(false); }}>
-      <form className="rr-add-review-form">
+      <form className="rr-add-review-form" onSubmit={handleSubmit}>
         <h3>Write Your Review</h3>
         <h4>About the {product.name}</h4>
         <div>
@@ -34,11 +48,11 @@ export default function AddReviewModal() {
           <p>Do you recommend this product?</p>
             <label>
               Yes
-              <input type="radio" name="recommend" value="yes" checked={recommend === 'yes'} onChange={handleRecommendChange} />
+              <input type="radio" name="recommend" value="true" checked={inputs.recommend === 'true'} onChange={handleInputChange} />
             </label>
             <label>
               No
-              <input type="radio" name="recommend" value="no" checked={recommend === 'no'} onChange={handleRecommendChange} />
+              <input type="radio" name="recommend" value="false" checked={inputs.recommend === 'false'} onChange={handleInputChange} />
             </label>
         </fieldset>
         <fieldset>
@@ -53,14 +67,45 @@ export default function AddReviewModal() {
           ))}
         </fieldset>
         <p>Review summary</p>
-        <input style={{ minWidth: '22rem' }} type="text" placeholder="Example: Best purchase ever!" maxLength="60" />
+        <input
+          name="summary"
+          type="text"
+          placeholder="Example: Best purchase ever!"
+          value={inputs.summary || ''}
+          onChange={handleInputChange}
+          style={{ minWidth: '22rem' }}
+          maxLength="60"
+        />
         <p>Review body</p>
-        <textarea style={{ minWidth: '22rem', minHeight: '8rem' }} placeholder="Why did you like the product or not?" maxLength="1000" />
+        <textarea
+          name="body"
+          placeholder="Why did you like the product or not?"
+          value={inputs.body || ''}
+          onChange={handleInputChange}
+          style={{ minWidth: '22rem', minHeight: '8rem' }}
+          maxLength="1000"
+        />
         <p>What is your nickname?</p>
-        <input style={{ minWidth: '22rem' }} type="text" placeholder="Example: jackson11!" maxLength="60" />
+        <input
+          name="nickname"
+          type="text"
+          placeholder="Example: jackson11!"
+          value={inputs.nickname || ''}
+          onChange={handleInputChange}
+          style={{ minWidth: '22rem' }}
+          maxLength="60"
+        />
         <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For privacy reasons, do not use your full name or email address.</aside>
         <p>Your email</p>
-        <input style={{ minWidth: '22rem' }} type="text" placeholder="Example: jackson11@email.com" maxLength="60" />
+        <input
+          name="email"
+          type="text"
+          placeholder="Example: jackson11@email.com"
+          value={inputs.email || ''}
+          onChange={handleInputChange}
+          style={{ minWidth: '22rem' }}
+          maxLength="60"
+        />
         <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For authentication reasons, you will not be emailed.</aside>
         <input type="submit" />
       </form>

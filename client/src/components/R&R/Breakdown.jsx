@@ -34,7 +34,6 @@ export default function Breakdown({ filters, setFilters }) {
   const numReviews = calculateNumReviews(reviewsMeta.ratings);
   const averageRating = calculateAverage(reviewsMeta.ratings);
   const percentRecommended = calculatePercentRecommended(reviewsMeta.recommended);
-  console.log(reviewsMeta);
   return (
     <div>
       <RatingSummary rating={averageRating} />
