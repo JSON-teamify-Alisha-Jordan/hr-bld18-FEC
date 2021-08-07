@@ -19,11 +19,6 @@ export default function AddReviewModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log('rating:', rating);
-    console.log('inputs: ', inputs);
-    console.log('chars: ', chars);
-
     setShowAddReviewModal(false);
   };
 
