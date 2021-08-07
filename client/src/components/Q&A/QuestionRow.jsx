@@ -6,8 +6,6 @@ import Helpful from './Helpful';
 export default function QuestionRow({ searchTerm, count }) {
   const { questions } = useContext(ProductContext);
 
-  // questions, all answers for that question, question asker, answerer
-
   const renderedQuestions = questions.slice(0, count).filter(
     (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
   );
