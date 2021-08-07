@@ -11,7 +11,7 @@ export default function AddAnswerModal() {
   function handleSubmit(event) {
     event.preventDefault();
   }
-console.log(product);
+
   return (
     <div
       className="modal-wrapper"
@@ -24,7 +24,7 @@ console.log(product);
     >
       <div className="modal-header">
         <b><h2>Add Your Answer</h2></b>
-        <em><h3>[{product.name}]</h3></em>
+        <em><h3>[{product.name}, Question Body]</h3></em>
         <span
           onClick={() => setShowAddAnswerModal(false)}
           className="close-modal-btn"
