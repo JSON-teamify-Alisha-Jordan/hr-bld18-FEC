@@ -5,7 +5,12 @@ import StarsInput from './StarsInput';
 import RadioRow from './RadioRow';
 
 export default function AddReviewModal() {
-  const { product, reviewsMeta, showAddReviewModal, setShowAddReviewModal } = useContext(ProductContext);
+  const {
+    product,
+    reviewsMeta,
+    showAddReviewModal,
+    setShowAddReviewModal,
+  } = useContext(ProductContext);
 
   const [rating, setRating] = useState(0);
   const [recommend, setRecommend] = useState('');
@@ -47,7 +52,17 @@ export default function AddReviewModal() {
             />
           ))}
         </fieldset>
-        <input type="text" placeholder="Insert your review here..." />
+        <p>Review summary</p>
+        <input style={{ minWidth: '22rem' }} type="text" placeholder="Example: Best purchase ever!" maxLength="60" />
+        <p>Review body</p>
+        <textarea style={{ minWidth: '22rem', minHeight: '8rem' }} placeholder="Why did you like the product or not?" maxLength="1000" />
+        <p>What is your nickname?</p>
+        <input style={{ minWidth: '22rem' }} type="text" placeholder="Example: jackson11!" maxLength="60" />
+        <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For privacy reasons, do not use your full name or email address.</aside>
+        <p>Your email</p>
+        <input style={{ minWidth: '22rem' }} type="text" placeholder="Example: jackson11@email.com" maxLength="60" />
+        <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For authentication reasons, you will not be emailed.</aside>
+        <input type="submit" />
       </form>
     </Modal>
   );

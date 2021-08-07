@@ -7,7 +7,7 @@ function RadioButton({ value, characteristic }) {
     <div>
       <input type="radio" name="recommend" value={value} id={`${characteristic}-${value}`} />
       {/* checked={} onChange={} */}
-      <label htmlFor={value}>{value}</label>
+      <label htmlFor={`${characteristic}-${value}`}>{value}</label>
     </div>
   );
 }
