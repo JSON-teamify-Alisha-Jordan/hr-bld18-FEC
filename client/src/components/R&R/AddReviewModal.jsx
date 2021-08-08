@@ -35,11 +35,11 @@ export default function AddReviewModal() {
       <form className="rr-add-review-form" onSubmit={handleSubmit}>
         <h3>Write Your Review</h3>
         <h4>About the {product.name}</h4>
-        <div>
+        <div className="rr-input-container">
           <p>Overall rating:</p>
           <StarsInput rating={rating} setRating={setRating} />
         </div>
-        <fieldset>
+        <div className="rr-input-container">
           <p>Do you recommend this product?</p>
             <label>
               Yes
@@ -49,8 +49,8 @@ export default function AddReviewModal() {
               No
               <input type="radio" name="recommend" value="false" checked={inputs.recommend === 'false'} onChange={handleInputChange} />
             </label>
-        </fieldset>
-        <fieldset>
+        </div>
+        <div className="rr-input-container">
           <p>Characteristics</p>
           {characteristicNames.map((characteristic) => (
             <RadioRow
@@ -60,49 +60,57 @@ export default function AddReviewModal() {
               key={characteristic}
             />
           ))}
-        </fieldset>
-        <p>Review summary</p>
-        <input
-          name="summary"
-          type="text"
-          placeholder="Example: Best purchase ever!"
-          value={inputs.summary || ''}
-          onChange={handleInputChange}
-          style={{ minWidth: '22rem' }}
-          maxLength="60"
-        />
-        <p>Review body</p>
-        <textarea
-          name="body"
-          placeholder="Why did you like the product or not?"
-          value={inputs.body || ''}
-          onChange={handleInputChange}
-          style={{ minWidth: '22rem', minHeight: '8rem' }}
-          maxLength="1000"
-        />
-        <p>What is your nickname?</p>
-        <input
-          name="nickname"
-          type="text"
-          placeholder="Example: jackson11!"
-          value={inputs.nickname || ''}
-          onChange={handleInputChange}
-          style={{ minWidth: '22rem' }}
-          maxLength="60"
-        />
-        <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For privacy reasons, do not use your full name or email address.</aside>
-        <p>Your email</p>
-        <input
-          name="email"
-          type="text"
-          placeholder="Example: jackson11@email.com"
-          value={inputs.email || ''}
-          onChange={handleInputChange}
-          style={{ minWidth: '22rem' }}
-          maxLength="60"
-        />
-        <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For authentication reasons, you will not be emailed.</aside>
-        <input type="submit" />
+        </div>
+        <div className="rr-input-container">
+          <p>Review summary</p>
+          <input
+            name="summary"
+            type="text"
+            placeholder="Example: Best purchase ever!"
+            value={inputs.summary || ''}
+            onChange={handleInputChange}
+            style={{ minWidth: '22rem' }}
+            maxLength="60"
+          />
+        </div>
+        <div className="rr-input-container">
+          <p>Review body</p>
+          <textarea
+            name="body"
+            placeholder="Why did you like the product or not?"
+            value={inputs.body || ''}
+            onChange={handleInputChange}
+            style={{ minWidth: '22rem', minHeight: '8rem' }}
+            maxLength="1000"
+          />
+        </div>
+        <div className="rr-input-container">
+          <p>What is your nickname?</p>
+          <input
+            name="nickname"
+            type="text"
+            placeholder="Example: jackson11!"
+            value={inputs.nickname || ''}
+            onChange={handleInputChange}
+            style={{ minWidth: '22rem' }}
+            maxLength="60"
+          />
+          <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For privacy reasons, do not use your full name or email address.</aside>
+        </div>
+        <div className="rr-input-container">
+          <p>Your email</p>
+          <input
+            name="email"
+            type="text"
+            placeholder="Example: jackson11@email.com"
+            value={inputs.email || ''}
+            onChange={handleInputChange}
+            style={{ minWidth: '22rem' }}
+            maxLength="60"
+          />
+          <aside style={{ fontSize: '.8rem', fontStyle: 'italic' }}>For authentication reasons, you will not be emailed.</aside>
+        </div>
+        <input className="rr-submit" type="submit" />
       </form>
     </Modal>
   );

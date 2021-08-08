@@ -178,12 +178,30 @@
 
 .rr-close-modal-button {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: .5rem;
+  top: .5rem;
   font-size: 1.5rem;
 }
 
 .rr-close-modal-button:hover {
   cursor: pointer;
   color: gray;
+}
+
+.rr-add-review-form h3 {
+  margin-bottom: .5rem;
+  font-size: 2rem;
+}
+
+.rr-add-review-form h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.rr-input-container {
+  margin: 1rem 0;
+}
+
+.rr-submit {
+  padding: 0 .5rem;
 }
