@@ -14,6 +14,7 @@ export default function App() {
   const [questions, setQuestions] = useState([]);
   const [showAddQuestionModal, setShowAddQuestionModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
+  const [showAddReviewModal, setShowAddReviewModal] = useState(false);
   const [showAddAnswerModal, setShowAddAnswerModal] = useState(false);
 
   function fetchProductID() {
@@ -78,6 +79,8 @@ export default function App() {
         fetchQuestions,
         setShowImageModal,
         showImageModal,
+        showAddReviewModal,
+        setShowAddReviewModal,
         setShowAddAnswerModal,
         showAddAnswerModal,
         setShowAddQuestionModal,

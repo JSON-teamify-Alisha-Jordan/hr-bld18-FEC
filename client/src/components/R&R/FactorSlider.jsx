@@ -1,4 +1,5 @@
 import React from 'react';
+import characteristicsText from './characteristicsText';
 
 export default function FactorSlider({ name, value }) {
   // convert value (1-5 scale) to a percentage - 1 is 0%, 5 is 100%
@@ -9,6 +10,7 @@ export default function FactorSlider({ name, value }) {
   const maxPosition = 12.45;
   // calculate position where 0% is minPosition, 100% is maxPosition
   const offset = minPosition + (percent / 100) * (maxPosition - minPosition);
+  const mapNumToOptionText = characteristicsText[name];
 
   return (
     <div className="rr-factor-slider-container">
@@ -17,8 +19,8 @@ export default function FactorSlider({ name, value }) {
         <span style={{ left: `${offset}rem` }}>&#9660;</span>
       </div>
       <div className="rr-factor-slider-labels">
-        <span>Too small</span>
-        <span>Too large</span>
+        <span>{mapNumToOptionText[1]}</span>
+        <span>{mapNumToOptionText[5]}</span>
       </div>
     </div>
   );
