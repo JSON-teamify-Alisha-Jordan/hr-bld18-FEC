@@ -14,8 +14,7 @@ export default function App() {
   const [questions, setQuestions] = useState([]);
   const [showAddQuestionModal, setShowAddQuestionModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
-  // TEMPORARILY initialized to true
-  const [showAddReviewModal, setShowAddReviewModal] = useState(true);
+  const [showAddReviewModal, setShowAddReviewModal] = useState(false);
   const [showAddAnswerModal, setShowAddAnswerModal] = useState(false);
 
   function fetchProductID() {

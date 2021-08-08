@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export default function ReviewFeedback({ helpfulness, id }) {
   function voteHelpful() {
-    console.log(`vote helpful for review ${id}`);
     localStorage.setItem(id, 'helpful');
     axios.put(`/reviews/${id}/helpful`);
   }
