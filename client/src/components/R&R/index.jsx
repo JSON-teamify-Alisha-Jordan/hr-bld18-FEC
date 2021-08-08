@@ -15,7 +15,7 @@ export default function RatingsAndReviews() {
 
   return (
     <div className="rr-container">
-      <h2 id="ratings_and_reviews" className="rr-header">Ratings & Reviews</h2>
+      <h2 id="ratings_and_reviews" className="rr-header qa-header">RATINGS & REVIEWS</h2>
       <Breakdown filters={filters} setFilters={setFilters} />
       <ReviewsList filters={filters} />
       <AddReviewModal />

@@ -41,7 +41,9 @@ export default function ReviewsList({ filters }) {
     <div className="reviews-list">
       <ReviewsListHeader numReviews={reviews.length} sort={sort} setSort={setSort} />
       <div className="reviews-container">
-        {filteredReviews.map((review) => <Review review={review} key={review.review_id} />)}
+        {filteredReviews.map((review) => (
+          <Review review={review} setReviews={setReviews} key={review.review_id} />
+        ))}
       </div>
       <ReviewsListButtonRow showTwoMoreReviews={showTwoMoreReviews} />
     </div>
