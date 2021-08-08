@@ -5,14 +5,10 @@ import Helpful from './Helpful';
 
 export default function QuestionRow({ searchTerm, count }) {
   const { questions } = useContext(ProductContext);
-  // const [search, setSearch] = useState([]);
 
   const renderedQuestions = questions.slice(0, count).filter(
     (question) => question.question_body.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
   );
-
-  // const searchable = alldata.map((data) => {
-  // });
 
   return (
     <div className="question-row">

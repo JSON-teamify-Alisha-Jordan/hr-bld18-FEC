@@ -2,28 +2,29 @@ import React, { useContext } from 'react';
 import ProductContext from '../../context';
 
 export default function AddAnswerModal() {
-  const { showAddAnswerModal, setShowAddAnswerModal } = useContext(ProductContext);
+  const {
+    product,
+    showAddAnswerModal,
+    setShowAddAnswerModal,
+  } = useContext(ProductContext);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
   }
 
   return (
     <div
       className="modal-wrapper"
       style={{
-        transform: showAddAnswerModal ? 'translate(0, 45rem)' : 'translateY(-100vh)',
+        transform: showAddAnswerModal ? 'translate(0, 20vh)' : 'translateY(-100vh)',
         opacity: showAddAnswerModal ? '1' : '0',
         zIndex: showAddAnswerModal ? '1' : '-1',
         position: 'absolute',
-        left: '25%',
-        top: '25%',
       }}
     >
       <div className="modal-header">
         <b><h2>Add Your Answer</h2></b>
-        <em><h3>[Product Name Here, Question Name]</h3></em>
+        <em><h3>[{product.name}, Question Body]</h3></em>
         <span
           onClick={() => setShowAddAnswerModal(false)}
           className="close-modal-btn"

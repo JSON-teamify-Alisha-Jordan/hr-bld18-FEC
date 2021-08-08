@@ -3,10 +3,12 @@ import React from 'react';
 export default function SearchBar({ setSearchTerm }) {
   function handleSearch(event) {
     const search = event.target.value;
+
     if (search.length >= 3) {
       setSearchTerm(search);
+    } else {
+      setSearchTerm('');
     }
-    setSearchTerm('');
   }
 
   return (

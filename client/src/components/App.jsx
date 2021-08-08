@@ -62,7 +62,6 @@ export default function App() {
     }
   }, [productID]);
 
-  // if our states are not populated
   if (!productID || !styles.length || !Object.keys(product).length
     || !questions.length || !reviewsMeta) {
     return (

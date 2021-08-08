@@ -7,9 +7,7 @@ export default function Helpful({ helpfulness }) {
   }
 
   return (
-    <span
-      className="helpful"
-    >Helpful?
+    <span className="helpful"> Helpful?
       <u onClick={handleCount}> Yes </u>
       ({helpfulness}) | <span onClick={() => setShowAddAnswerModal(true)}><u>Add Answer</u></span>
     </span>
