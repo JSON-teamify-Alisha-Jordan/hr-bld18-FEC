@@ -3,7 +3,7 @@ import ReviewTopRow from './ReviewTopRow';
 import ReviewBody from './ReviewBody';
 import ReviewFeedback from './ReviewFeedback';
 
-export default function Review({ review, setReviews }) {
+export default function Review({ review }) {
   return (
     <div className="review-container">
       <ReviewTopRow review={review} />
@@ -11,7 +11,6 @@ export default function Review({ review, setReviews }) {
       <ReviewFeedback
         helpfulness={review.helpfulness}
         id={review.review_id}
-        setReviews={setReviews}
       />
     </div>
   );

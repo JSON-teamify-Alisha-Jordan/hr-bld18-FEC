@@ -1,10 +1,12 @@
+/* eslint-disable guard-for-in */
 import React, { useContext, useState } from 'react';
+import axios from 'axios';
 import ProductContext from '../../context';
 import Modal from './Modal';
 import StarsInput from './StarsInput';
 import RadioRow from './RadioRow';
 
-export default function AddReviewModal() {
+export default function AddReviewModal({ fetchReviews }) {
   const {
     product,
     reviewsMeta,
@@ -19,16 +21,44 @@ export default function AddReviewModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const characteristics = {};
+    for (const charName in chars) {
+      const charID = reviewsMeta.characteristics[charName].id;
+      characteristics[charID] = chars[charName];
+    }
+    console.log({
+      product_id: product.id,
+      rating,
+      ...inputs,
+      photos: [],
+      characteristics,
+    });
+    axios.post('/reviews', {
+      product_id: product.id,
+      rating,
+      ...inputs,
+      photos: [],
+      characteristics,
+    })
+      .then(console.log)
+      .then(fetchReviews);
+
     setShowAddReviewModal(false);
   };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+    if (name === 'recommend') {
+      value = value === 'yes';
+    }
     setInputs((prevInputs) => ({
       ...prevInputs,
       [name]: value,
     }));
   };
+
+  console.log(inputs.recommend);
 
   return (
     <Modal show={showAddReviewModal} close={() => { setShowAddReviewModal(false); }}>
@@ -43,11 +73,11 @@ export default function AddReviewModal() {
           <p>Do you recommend this product?</p>
             <label>
               Yes
-              <input type="radio" name="recommend" value="true" checked={inputs.recommend === 'true'} onChange={handleInputChange} />
+              <input type="radio" name="recommend" value="yes" checked={inputs.recommend === true} onChange={handleInputChange} />
             </label>
             <label>
               No
-              <input type="radio" name="recommend" value="false" checked={inputs.recommend === 'false'} onChange={handleInputChange} />
+              <input type="radio" name="recommend" value="no" checked={inputs.recommend === false} onChange={handleInputChange} />
             </label>
         </div>
         <div className="rr-input-container">
@@ -87,10 +117,10 @@ export default function AddReviewModal() {
         <div className="rr-input-container">
           <p>What is your nickname?</p>
           <input
-            name="nickname"
+            name="name"
             type="text"
             placeholder="Example: jackson11!"
-            value={inputs.nickname || ''}
+            value={inputs.name || ''}
             onChange={handleInputChange}
             style={{ minWidth: '22rem' }}
             maxLength="60"

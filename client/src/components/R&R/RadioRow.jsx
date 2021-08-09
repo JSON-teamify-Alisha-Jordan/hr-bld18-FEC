@@ -10,7 +10,7 @@ function RadioButton({ rating, characteristic, chars, setChars }) {
     const { name, value } = e.target;
     setChars((prevChars) => ({
       ...prevChars,
-      [name]: value,
+      [name]: Number(value),
     }));
   };
 
@@ -21,7 +21,7 @@ function RadioButton({ rating, characteristic, chars, setChars }) {
         name={characteristic}
         value={rating}
         id={`${characteristic}-${rating}`}
-        checked={chars[characteristic] === String(rating)}
+        checked={chars[characteristic] === rating}
         onChange={handleChange}
       />
       <label htmlFor={`${characteristic}-${rating}`}>{text}</label>

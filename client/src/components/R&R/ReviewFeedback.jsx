@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function ReviewFeedback({ helpfulness, id, setReviews }) {
+export default function ReviewFeedback({ helpfulness, id }) {
   const [vote, setVote] = useState(0);
+  const [reported, setReported] = useState(!!localStorage.getItem(`report-${id}`));
 
   function voteHelpful() {
-    if (!localStorage.getItem(id)) {
-      localStorage.setItem(id, 'helpful');
+    if (!localStorage.getItem(`helpful-${id}`)) {
+      localStorage.setItem(`helpful-${id}`, 'helpful');
       axios.put(`/reviews/${id}/helpful`)
         .then(() => {
           setVote(1);
+        });
+    }
+  }
+
+  function report() {
+    if (!localStorage.getItem(`report-${id}`)) {
+      localStorage.setItem(`report-${id}`, 'reported');
+      axios.put(`/reviews/${id}/report`)
+        .then(() => {
+          setReported(true);
         });
     }
   }
@@ -19,7 +30,7 @@ export default function ReviewFeedback({ helpfulness, id, setReviews }) {
       Helpful?
       <button onClick={voteHelpful} className="rr-text-button" type="button">Yes ({helpfulness + vote}) {localStorage.getItem(id) || vote ? 'Thanks for voting!' : null}</button>
       |
-      <button className="rr-text-button" type="button">Report</button>
+      <button onClick={report} className="rr-text-button" type="button">{reported ? 'Thanks for reporting' : 'Report'}</button>
     </div>
   );
 }
